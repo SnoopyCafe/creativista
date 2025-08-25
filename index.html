@@ -139,18 +139,18 @@
                             <li>One-on-one attention to boost confidence</li>
                         </ul>
                     </div>
-                    <div>
-                        <!-- AI-generated image for Private Tutoring -->
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANsAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="A friendly tutor sits with a smiling elementary school student (age 6-12), working together at a table. The tutor is pointing to a book or a worksheet." class="w-full rounded-2xl shadow-xl ai-image" data-prompt="A friendly tutor sits with a smiling elementary school student (age 6-12), working together at a table. The tutor is pointing to a book or a worksheet.">
+                    <div class="p-8 flex items-center justify-center bg-gray-200 rounded-2xl shadow-xl">
+                        <!-- Image for Private Tutoring -->
+                        <img src="https://placehold.co/600x400/D1D5DB/1F2937?text=Private+Tutoring" alt="A friendly tutor working with a single student." class="w-full rounded-2xl shadow-xl">
                     </div>
                 </div>
 
                 <hr class="my-16 border-gray-200">
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
-                    <div class="order-2 md:order-1">
-                        <!-- AI-generated image for Small Group Tutoring -->
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANsAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="A diverse group of four elementary school children (ages 6-12), including children of Caucasian, Black, and Asian descent, are happily engaged in a fun, hands-on learning activity with a teacher. The children are laughing and collaborating." class="w-full rounded-2xl shadow-xl ai-image" data-prompt="A diverse group of four elementary school children (ages 6-12), including children of Caucasian, Black, and Asian descent, are happily engaged in a fun, hands-on learning activity with a teacher. The children are laughing and collaborating.">
+                    <div class="order-2 md:order-1 p-8 flex items-center justify-center bg-gray-200 rounded-2xl shadow-xl">
+                        <!-- Image for Small Group Tutoring -->
+                        <img src="https://placehold.co/600x400/D1D5DB/1F2937?text=Group+Tutoring" alt="A tutor working with a small group of students." class="w-full rounded-2xl shadow-xl">
                     </div>
                     <div class="order-1 md:order-2">
                         <h3 class="text-3xl md:text-4xl font-bold text-[#42c0bb] mb-4">Small Group Tutoring</h3>
@@ -332,51 +332,6 @@
     
     <!-- JavaScript for Mobile Menu, FAQ Accordion, and Navigation -->
     <script>
-        // Placeholder image generation function
-        async function generateAndReplaceImages() {
-            const images = document.querySelectorAll('.ai-image');
-            for (const img of images) {
-                const prompt = img.getAttribute('data-prompt');
-                if (!prompt) continue;
-
-                const loadingIndicator = document.createElement('div');
-                loadingIndicator.textContent = 'Generating image...';
-                loadingIndicator.className = 'absolute inset-0 flex items-center justify-center text-center text-gray-500 bg-white/75 rounded-2xl';
-                img.style.position = 'relative'; // Make parent relative for absolute child
-                img.parentNode.appendChild(loadingIndicator);
-                img.src = "data:image/png;base64,iVBORw0KGgoAAAANsAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
-                
-                try {
-                    const payload = { instances: { prompt: prompt }, parameters: { "sampleCount": 1} };
-                    const apiKey = "";
-                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${apiKey}`;
-                    
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (!response.ok) {
-                        throw new Error(`API request failed with status: ${response.status}`);
-                    }
-
-                    const result = await response.json();
-                    
-                    if (result.predictions && result.predictions.length > 0 && result.predictions[0].bytesBase64Encoded) {
-                        const imageUrl = `data:image/png;base64,${result.predictions[0].bytesBase64Encoded}`;
-                        img.src = imageUrl;
-                        img.onload = () => loadingIndicator.remove(); // Remove loading indicator once image is loaded
-                    } else {
-                        throw new Error('No valid image data received from API');
-                    }
-                } catch (error) {
-                    console.error('Failed to generate image:', error);
-                    loadingIndicator.textContent = 'Failed to generate image.';
-                }
-            }
-        }
-        
         // Toggle mobile menu
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -440,7 +395,6 @@
         window.onload = function() {
             setupSmoothScrollLinks('desktop-nav');
             setupSmoothScrollLinks('mobile-menu');
-            generateAndReplaceImages();
         };
     </script>
 </body>
