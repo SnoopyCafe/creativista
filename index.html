@@ -49,7 +49,7 @@
             <a href="#hero" class="text-2xl font-bold text-[#ed0081] company-name">
                 Creativista Pods
             </a>
-            <div class="hidden md:flex space-x-8">
+            <div class="hidden md:flex space-x-8" id="desktop-nav">
                 <a href="#about" class="text-slate-600 hover:text-[#ed0081] transition-colors">About Us</a>
                 <a href="#services" class="text-slate-600 hover:text-[#ed0081] transition-colors">Services</a>
                 <a href="#testimonials" class="text-slate-600 hover:text-[#ed0081] transition-colors">Testimonials</a>
@@ -141,7 +141,7 @@
                     </div>
                     <div>
                         <!-- AI-generated image for Private Tutoring -->
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="A friendly tutor sits with a smiling elementary school student (age 6-12), working together at a table. The tutor is pointing to a book or a worksheet." class="w-full rounded-2xl shadow-xl ai-image" data-prompt="A friendly tutor sits with a smiling elementary school student (age 6-12), working together at a table. The tutor is pointing to a book or a worksheet.">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANsAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="A friendly tutor sits with a smiling elementary school student (age 6-12), working together at a table. The tutor is pointing to a book or a worksheet." class="w-full rounded-2xl shadow-xl ai-image" data-prompt="A friendly tutor sits with a smiling elementary school student (age 6-12), working together at a table. The tutor is pointing to a book or a worksheet.">
                     </div>
                 </div>
 
@@ -330,7 +330,7 @@
         </div>
     </footer>
     
-    <!-- JavaScript for Mobile Menu and FAQ Accordion -->
+    <!-- JavaScript for Mobile Menu, FAQ Accordion, and Navigation -->
     <script>
         // Placeholder image generation function
         async function generateAndReplaceImages() {
@@ -341,9 +341,11 @@
 
                 const loadingIndicator = document.createElement('div');
                 loadingIndicator.textContent = 'Generating image...';
-                loadingIndicator.className = 'w-full h-full flex items-center justify-center text-center text-gray-500';
-                img.parentNode.insertBefore(loadingIndicator, img.nextSibling);
-
+                loadingIndicator.className = 'absolute inset-0 flex items-center justify-center text-center text-gray-500 bg-white/75 rounded-2xl';
+                img.style.position = 'relative'; // Make parent relative for absolute child
+                img.parentNode.appendChild(loadingIndicator);
+                img.src = "data:image/png;base64,iVBORw0KGgoAAAANsAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
+                
                 try {
                     const payload = { instances: { prompt: prompt }, parameters: { "sampleCount": 1} };
                     const apiKey = "";
@@ -364,7 +366,7 @@
                     if (result.predictions && result.predictions.length > 0 && result.predictions[0].bytesBase64Encoded) {
                         const imageUrl = `data:image/png;base64,${result.predictions[0].bytesBase64Encoded}`;
                         img.src = imageUrl;
-                        loadingIndicator.remove();
+                        img.onload = () => loadingIndicator.remove(); // Remove loading indicator once image is loaded
                     } else {
                         throw new Error('No valid image data received from API');
                     }
@@ -382,12 +384,29 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Close mobile menu when a link is clicked
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+        // Universal Navigation Click Handler
+        function setupSmoothScrollLinks(containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            const links = container.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+
+                    // Hide mobile menu if a link is clicked
+                    if (containerId === 'mobile-menu') {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
             });
-        });
+        }
         
         // FAQ accordion functionality
         const faqToggles = document.querySelectorAll('.faq-toggle');
@@ -417,10 +436,12 @@
             });
         });
 
-        // Call the image generation function on window load
-        window.onload = generateAndReplaceImages;
+        // Call functions on window load
+        window.onload = function() {
+            setupSmoothScrollLinks('desktop-nav');
+            setupSmoothScrollLinks('mobile-menu');
+            generateAndReplaceImages();
+        };
     </script>
 </body>
 </html>
-
-
