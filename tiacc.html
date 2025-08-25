@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creativista Pods</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Atma & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atma:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, .company-name {
+            font-family: 'Atma', cursive;
+        }
+        .company-name {
+            font-weight: 700;
+        }
+        h1, h2 {
+            font-weight: 600;
+        }
+        h3 {
+            font-weight: 500;
+        }
+        /* Custom scroll-behavior for smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Style for the FAQ accordion content */
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+        .faq-content.open {
+            max-height: 500px; /* A value larger than the expected content height */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white sticky top-0 z-50 shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-[#ed0081] company-name">
+                Creativista Pods
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-slate-600 hover:text-[#ed0081] transition-colors">About Us</a>
+                <a href="#services" class="text-slate-600 hover:text-[#ed0081] transition-colors">Services</a>
+                <a href="#testimonials" class="text-slate-600 hover:text-[#ed0081] transition-colors">Testimonials</a>
+                <a href="#faq" class="text-slate-600 hover:text-[#ed0081] transition-colors">FAQ</a>
+                <a href="#contact" class="px-4 py-2 bg-[#ed0081] text-white font-medium rounded-full shadow-lg hover:bg-[#ed0081]/90 transition-colors">Contact Us</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-slate-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+            <a href="#about" class="block py-3 px-6 text-slate-600 hover:bg-slate-100 transition-colors">About Us</a>
+            <a href="#services" class="block py-3 px-6 text-slate-600 hover:bg-slate-100 transition-colors">Services</a>
+            <a href="#testimonials" class="block py-3 px-6 text-slate-600 hover:bg-slate-100 transition-colors">Testimonials</a>
+            <a href="#faq" class="block py-3 px-6 text-slate-600 hover:bg-slate-100 transition-colors">FAQ</a>
+            <a href="#contact" class="block py-3 px-6 text-[#ed0081] font-medium hover:bg-slate-100 transition-colors">Contact Us</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="bg-gradient-to-r from-[#f2af38] to-[#ed0081] text-white py-24 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-4">
+                    Spark a Love for Learning!
+                </h1>
+                <p class="text-lg sm:text-xl md:text-2xl font-light max-w-3xl mx-auto mb-8">
+                    Personalized tutoring designed to boost confidence, spark curiosity, and make learning fun for your child.
+                </p>
+                <a href="#services" class="inline-block px-8 py-4 bg-white text-[#ed0081] font-medium rounded-full shadow-lg hover:bg-gray-100 transform hover:scale-105 transition-transform duration-300">
+                    Explore Our Services
+                </a>
+            </div>
+        </section>
+
+        <!-- About/Why Choose Us Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Why Parents Trust Creativista Pods</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <!-- Feature Card 1 -->
+                    <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-[#ed0081] mb-4">
+                            <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Our Friendly Tutors</h3>
+                        <p class="text-slate-600">Our team consists of passionate, certified educators who understand how to connect with elementary students and make learning engaging.</p>
+                    </div>
+                    <!-- Feature Card 2 -->
+                    <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-[#42c0bb] mb-4">
+                            <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-2 4h4c-1.66 0-3 1.34-3 3s1.34 3 3 3c1.66 0 2.99-1.34 2.99-3s-1.34-3-3-3h-4zm8 0h4c-1.66 0-3 1.34-3 3s1.34 3 3 3c1.66 0 2.99-1.34 2.99-3s-1.34-3-3-3z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Just for Your Child</h3>
+                        <p class="text-slate-600">Every student is unique! We create a custom learning plan to meet your child's specific academic needs and celebrate their progress.</p>
+                    </div>
+                    <!-- Feature Card 3 -->
+                    <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-[#f2af38] mb-4">
+                            <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 24 24"><path d="M22 10.99c0-5.52-4.48-10-10-10S2 5.47 2 10.99c0 4.25 2.65 7.85 6.34 9.25L12 21.99l3.66-1.75c3.69-1.4 6.34-5 6.34-9.25zm-2 0c0 4.41-3.59 8-8 8s-8-3.59-8-8c0-4.41 3.59-8 8-8s8 3.59 8 8zM9 13.99l-3-3 1.41-1.41L9 11.17l5.59-5.59L16 7.17l-7 7.82z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Building Confidence</h3>
+                        <p class="text-slate-600">Our goal is to help your child feel good about themselves and their abilities. We don't just teach subjects; we build confidence and a love for learning.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h3 class="text-3xl md:text-4xl font-bold text-[#ed0081] mb-4">Private Tutoring</h3>
+                        <p class="text-lg text-slate-600 mb-6">
+                            For a truly personalized experience, our **private tutoring** service provides your child with undivided, one-on-one attention from a dedicated, qualified educator. We create a custom learning plan to address specific academic challenges, fill knowledge gaps, and build confidence at your child's own pace. We can work with your child in your home or a location of your choice.
+                        </p>
+                        <ul class="list-disc list-inside text-slate-600 space-y-2">
+                            <li>Completely personalized curriculum</li>
+                            <li>Ideal for addressing specific learning needs</li>
+                            <li>Flexible scheduling and location</li>
+                            <li>One-on-one attention to boost confidence</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <!-- AI-generated image for Private Tutoring -->
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="A friendly tutor sits with a smiling elementary school student (age 6-12), working together at a table. The tutor is pointing to a book or a worksheet." class="w-full rounded-2xl shadow-xl ai-image" data-prompt="A friendly tutor sits with a smiling elementary school student (age 6-12), working together at a table. The tutor is pointing to a book or a worksheet.">
+                    </div>
+                </div>
+
+                <hr class="my-16 border-gray-200">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+                    <div class="order-2 md:order-1">
+                        <!-- AI-generated image for Small Group Tutoring -->
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANsAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="A diverse group of four elementary school children (ages 6-12), including children of Caucasian, Black, and Asian descent, are happily engaged in a fun, hands-on learning activity with a teacher. The children are laughing and collaborating." class="w-full rounded-2xl shadow-xl ai-image" data-prompt="A diverse group of four elementary school children (ages 6-12), including children of Caucasian, Black, and Asian descent, are happily engaged in a fun, hands-on learning activity with a teacher. The children are laughing and collaborating.">
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <h3 class="text-3xl md:text-4xl font-bold text-[#42c0bb] mb-4">Small Group Tutoring</h3>
+                        <p class="text-lg text-slate-600 mb-6">
+                            Our **small group tutoring** sessions are perfect for collaborative learning. Children work together in a fun and engaging environment, guided by one of our expert educators. These sessions foster social skills and peer learning, helping students build confidence and stay motivated.
+                        </p>
+                        <ul class="list-disc list-inside text-slate-600 space-y-2">
+                            <li>Collaborative and social environment</li>
+                            <li>Engaging, fun-filled curriculum</li>
+                            <li>Builds confidence and teamwork skills</li>
+                            <li>Great for motivated students who enjoy group work</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">What Our Families Are Saying</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100">
+                        <p class="text-slate-700 italic text-lg mb-4">"Our daughter went from dreading math to asking for extra practice! The personalized attention made all the difference and now she loves it."</p>
+                        <div class="flex items-center">
+                            <img src="https://placehold.co/48x48/ed0081/ffffff?text=SM" alt="A placeholder for a testimonial user profile picture." class="w-12 h-12 bg-[#ed0081]/20 rounded-full flex-shrink-0 mr-4">
+                            <div>
+                                <p class="font-bold text-slate-800">Sarah M.</p>
+                                <p class="text-sm text-slate-500">Parent of a 3rd grader</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100">
+                        <p class="text-slate-700 italic text-lg mb-4">"I highly recommend Creativista Pods. They helped our son prepare for his end-of-year exams and his confidence has soared. The tutor was fantastic."</p>
+                        <div class="flex items-center">
+                            <img src="https://placehold.co/48x48/42c0bb/ffffff?text=JL" alt="A placeholder for a testimonial user profile picture." class="w-12 h-12 bg-[#42c0bb]/20 rounded-full flex-shrink-0 mr-4">
+                            <div>
+                                <p class="font-bold text-slate-800">John L.</p>
+                                <p class="text-sm text-slate-500">Parent of a 5th grader</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section id="faq" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+                <div class="max-w-4xl mx-auto space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-white rounded-xl shadow-md">
+                        <button class="w-full text-left p-6 font-semibold text-lg text-slate-700 flex justify-between items-center faq-toggle">
+                            <span>What is a learning pod?</span>
+                            <span class="text-[#ed0081] text-xl">+</span>
+                        </button>
+                        <div class="faq-content p-6 text-slate-600">
+                            A learning pod is a small group of students, typically between 3 and 10 of similar age or grade, who gather to learn, explore, and socialize under the supervision of one of our qualified teachers.
+                        </div>
+                    </div>
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-white rounded-xl shadow-md">
+                        <button class="w-full text-left p-6 font-semibold text-lg text-slate-700 flex justify-between items-center faq-toggle">
+                            <span>How do I form or join a learning pod?</span>
+                            <span class="text-[#ed0081] text-xl">+</span>
+                        </button>
+                        <div class="faq-content p-6 text-slate-600">
+                            You can form your own pod with friends, family, or neighbors, and we will provide a teacher. Alternatively, we can help you find an existing pod to join at our studio in Davie, Florida.
+                        </div>
+                    </div>
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-white rounded-xl shadow-md">
+                        <button class="w-full text-left p-6 font-semibold text-lg text-slate-700 flex justify-between items-center faq-toggle">
+                            <span>What qualifications do your tutors have?</span>
+                            <span class="text-[#ed0081] text-xl">+</span>
+                        </button>
+                        <div class="faq-content p-6 text-slate-600">
+                            Our tutors are highly qualified, certified educators. They are also fully insured, fingerprinted, and have passed thorough background checks to ensure your child's safety and well-being.
+                        </div>
+                    </div>
+                    <!-- FAQ Item 4 -->
+                    <div class="bg-white rounded-xl shadow-md">
+                        <button class="w-full text-left p-6 font-semibold text-lg text-slate-700 flex justify-between items-center faq-toggle">
+                            <span>What curriculum do you use?</span>
+                            <span class="text-[#ed0081] text-xl">+</span>
+                        </button>
+                        <div class="faq-content p-6 text-slate-600">
+                            For preschool and kindergarten, we use a play-based curriculum that includes pre-reading, pre-math, and STEM skills. Our programs also focus on developing gross and fine motor skills and cognitive abilities.
+                        </div>
+                    </div>
+                    <!-- FAQ Item 5 -->
+                    <div class="bg-white rounded-xl shadow-md">
+                        <button class="w-full text-left p-6 font-semibold text-lg text-slate-700 flex justify-between items-center faq-toggle">
+                            <span>How does your pricing work?</span>
+                            <span class="text-[#ed0081] text-xl">+</span>
+                        </button>
+                        <div class="faq-content p-6 text-slate-600">
+                            Our pricing is a set fee per pod, which becomes more economical for each family as more students join. We find this model provides the best value for a high-quality educational experience.
+                        </div>
+                    </div>
+                    <!-- FAQ Item 6 -->
+                    <div class="bg-white rounded-xl shadow-md">
+                        <button class="w-full text-left p-6 font-semibold text-lg text-slate-700 flex justify-between items-center faq-toggle">
+                            <span>Do you work with homeschool students?</span>
+                            <span class="text-[#ed0081] text-xl">+</span>
+                        </button>
+                        <div class="faq-content p-6 text-slate-600">
+                            Yes, we provide tutoring and support for homeschooled students in grades K-5. We can assist with core subjects, project-based learning, and skill enhancement, while the ultimate responsibility for the homeschool program remains with the parent.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-[#42c0bb] text-white">
+            <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div>
+                    <h2 class="text-3xl font-bold text-[#ed0081] mb-6">Send Us a Message</h2>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-white">Full Name</label>
+                            <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-white focus:ring-white text-slate-800">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-white">Email Address</label>
+                            <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-white focus:ring-white text-slate-800">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-white">Phone Number (Optional)</label>
+                            <input type="tel" id="phone" name="phone" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-white focus:ring-white text-slate-800">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-white">Your Message</label>
+                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-white focus:ring-white text-slate-800"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 px-4 bg-white text-[#42c0bb] font-semibold rounded-md shadow-lg hover:bg-gray-100 transition-colors">
+                            Submit Inquiry
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="bg-transparent p-8 rounded-2xl border-2 border-white">
+                    <h2 class="text-3xl font-bold text-[#f2af38] mb-6">Our Information</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="font-bold text-lg text-white">Address</h3>
+                            <p class="text-gray-200">
+                                4601 SW 148th Ave<br>
+                                Suite 11<br>
+                                Davie, FL 33330
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-white">Phone</h3>
+                            <p class="text-gray-200">954.512.9231</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-white">Email</h3>
+                            <p class="text-gray-200">info@creativistapods.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-slate-300 py-10">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Creativista Pods. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript for Mobile Menu and FAQ Accordion -->
+    <script>
+        // Placeholder image generation function
+        async function generateAndReplaceImages() {
+            const images = document.querySelectorAll('.ai-image');
+            for (const img of images) {
+                const prompt = img.getAttribute('data-prompt');
+                if (!prompt) continue;
+
+                const loadingIndicator = document.createElement('div');
+                loadingIndicator.textContent = 'Generating image...';
+                loadingIndicator.className = 'w-full h-full flex items-center justify-center text-center text-gray-500';
+                img.parentNode.insertBefore(loadingIndicator, img.nextSibling);
+
+                try {
+                    const payload = { instances: { prompt: prompt }, parameters: { "sampleCount": 1} };
+                    const apiKey = "";
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${apiKey}`;
+                    
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`API request failed with status: ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    
+                    if (result.predictions && result.predictions.length > 0 && result.predictions[0].bytesBase64Encoded) {
+                        const imageUrl = `data:image/png;base64,${result.predictions[0].bytesBase64Encoded}`;
+                        img.src = imageUrl;
+                        loadingIndicator.remove();
+                    } else {
+                        throw new Error('No valid image data received from API');
+                    }
+                } catch (error) {
+                    console.error('Failed to generate image:', error);
+                    loadingIndicator.textContent = 'Failed to generate image.';
+                }
+            }
+        }
+        
+        // Toggle mobile menu
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // FAQ accordion functionality
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const arrow = toggle.querySelector('span:last-child');
+                
+                // Close other open FAQ items
+                faqToggles.forEach(otherToggle => {
+                    if (otherToggle !== toggle) {
+                        otherToggle.nextElementSibling.classList.remove('open');
+                        otherToggle.nextElementSibling.style.maxHeight = null;
+                        otherToggle.querySelector('span:last-child').textContent = '+';
+                    }
+                });
+
+                // Toggle the clicked FAQ item
+                content.classList.toggle('open');
+                if (content.classList.contains('open')) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    arrow.textContent = '-';
+                } else {
+                    content.style.maxHeight = null;
+                    arrow.textContent = '+';
+                }
+            });
+        });
+
+        // Call the image generation function on window load
+        window.onload = generateAndReplaceImages;
+    </script>
+</body>
+</html>
+
+
