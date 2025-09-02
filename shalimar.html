@@ -1,1 +1,148 @@
-html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pod Scholars - Reading & Math Tutoring</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            color: #1a202c;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 1.5rem;
+        }
+        .hero-bg {
+            background-image: url('uploaded:image_1607b8.png-bf396168-6fe8-4fbb-b973-61a11e09bf83');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md">
+        <div class="container flex justify-between items-center py-4">
+            <div class="flex items-center space-x-2">
+                <img src="https://placehold.co/40x40/3182ce/ffffff?text=Logo" alt="Pod Scholars Logo" class="rounded-full">
+                <span class="text-xl font-bold text-gray-800">Pod Scholars</span>
+            </div>
+            <nav>
+                <ul class="flex space-x-6 text-gray-600 font-medium">
+                    <li><a href="#home" class="hover:text-blue-600 transition-colors">Home</a></li>
+                    <li><a href="#about" class="hover:text-blue-600 transition-colors">About Us</a></li>
+                    <li><a href="#programs" class="hover:text-blue-600 transition-colors">Programs</a></li>
+                    <li><a href="#contact" class="hover:text-blue-600 transition-colors">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg h-[50vh] md:h-[70vh] flex items-center justify-center text-center">
+        <div class="hero-overlay"></div>
+        <div class="relative z-10 text-white p-4">
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-2">Unlock Your Child's Potential!</h1>
+            <p class="text-xl md:text-2xl font-light mb-8">Reading & Math Tutoring for Pre-K Through 8th Grade</p>
+            <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">Learn More</a>
+        </div>
+    </section>
+
+    <main class="container py-12">
+
+        <!-- About Section -->
+        <section id="about" class="bg-white rounded-xl shadow-lg p-8 mb-12">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-blue-800 mb-4">About Us</h2>
+                    <p class="text-gray-700 leading-relaxed mb-4">At Pod Scholars, we are dedicated to fostering a love for learning in every child. Our mission is to provide personalized, one-on-one tutoring that not only boosts academic performance but also builds confidence and critical thinking skills. We believe that every child has unique potential, and our expert tutors are committed to helping them unlock it.</p>
+                    <p class="text-gray-700 leading-relaxed">Our programs are designed to be flexible and engaging, ensuring that your child's learning journey is both effective and enjoyable. We partner with parents to create a supportive environment where students can thrive and achieve their academic goals.</p>
+                </div>
+                <div>
+                    <!-- Placeholder image for About Us section -->
+                    <img src="https://placehold.co/600x400/3182ce/ffffff?text=About+Pod+Scholars" alt="Tutor helping a student" class="rounded-xl shadow-lg w-full">
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Section -->
+        <section id="programs" class="bg-white rounded-xl shadow-lg p-8 mb-12">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6 text-center">Our Programs</h2>
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg shadow-inner">
+                    <i class="fas fa-book-reader text-4xl text-blue-600"></i>
+                    <h3 class="text-xl font-semibold text-gray-800">Reading Tutoring</h3>
+                    <p class="text-gray-600">Pre-K - 8th Grade</p>
+                </div>
+                <div class="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg shadow-inner">
+                    <i class="fas fa-calculator text-4xl text-blue-600"></i>
+                    <h3 class="text-xl font-semibold text-gray-800">Math Tutoring</h3>
+                    <p class="text-gray-600">Pre-K - 8th Grade</p>
+                </div>
+                <div class="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg shadow-inner">
+                    <i class="fas fa-pencil-alt text-4xl text-blue-600"></i>
+                    <h3 class="text-xl font-semibold text-gray-800">Homework Help</h3>
+                    <p class="text-gray-600">Get support with daily assignments.</p>
+                </div>
+                <div class="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg shadow-inner">
+                    <i class="fas fa-brain text-4xl text-blue-600"></i>
+                    <h3 class="text-xl font-semibold text-gray-800">Confidence Building</h3>
+                    <p class="text-gray-600">Foster self-assurance in academics.</p>
+                </div>
+                <div class="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg shadow-inner">
+                    <i class="fas fa-graduation-cap text-4xl text-blue-600"></i>
+                    <h3 class="text-xl font-semibold text-gray-800">Improved Grades</h3>
+                    <p class="text-gray-600">Achieve better academic performance.</p>
+                </div>
+                <div class="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg shadow-inner">
+                    <i class="fas fa-handshake text-4xl text-blue-600"></i>
+                    <h3 class="text-xl font-semibold text-gray-800">Personalized Plans</h3>
+                    <p class="text-gray-600">Tailored to your child's needs.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-blue-800 text-white rounded-xl shadow-lg p-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">Ready to Unlock Your Child's Potential?</h2>
+            <p class="text-lg font-light mb-6">Contact us today to learn more and schedule a consultation!</p>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-phone-alt text-xl"></i>
+                    <a href="tel:954-833-6672" class="text-lg font-bold hover:underline">954.833.6672</a>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-envelope text-xl"></i>
+                    <a href="mailto:info@podscholars.com" class="text-lg font-bold hover:underline">info@podscholars.com</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-6 mt-12">
+        <div class="container text-center">
+            <p>&copy; 2024 Pod Scholars. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
