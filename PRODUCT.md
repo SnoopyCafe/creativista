@@ -6,7 +6,7 @@ brand
 
 ## Users
 
-Parents in South Florida (Plantation and surrounding) with children ages 3 to 17. Many are weighing a tutoring decision after a specific trigger: a child falling behind in reading or math, a child who has started saying "I'm bad at this", or a homeschooling parent who needs structure they can't build alone. A meaningful share arrive via the Step-Up for Students scholarship, so cost and approved-provider status are live concerns.
+Parents in South Florida (Plantation and surrounding) with children ages 5 to 12. Many are weighing a tutoring decision after a specific trigger: a child falling behind in reading or math, a child who has started saying "I'm bad at this", or a homeschooling parent who needs structure they can't build alone. A meaningful share arrive via the Step-Up for Students scholarship, so cost and approved-provider status are live concerns.
 
 They are evaluating, not browsing. The job to be done is: decide within a few minutes whether this is credible, safe, affordable, and different from the franchise tutoring centre down the road — then book a call.
 
