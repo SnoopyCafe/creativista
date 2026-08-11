@@ -1,0 +1,11 @@
+.DS_Store
+node_modules/
+.impeccable/
+
+# Site backups: contain wp-config.php with live DB credentials. Never commit.
+*.tar.gz
+qjfjxcmy*/
+old/
+
+# DB dumps: may contain user emails, password hashes, form submissions. Never commit.
+*.sql
