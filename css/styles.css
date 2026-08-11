@@ -264,15 +264,11 @@ h2{font-size:var(--step-2); max-width:17ch; letter-spacing:-0.032em}
 .card h3{font-size:var(--step-1); letter-spacing:-0.03em}
 .card .meta{font-size:var(--step--2); color:var(--ink-soft); margin:0.5rem 0 0; font-weight:500}
 .card p.desc{font-size:var(--step--1); color:var(--ink-soft); margin:0.85rem 0 0}
-.card .price{font-family:"Gabarito"; font-weight:800; font-size:var(--step-1); letter-spacing:-0.035em; color:var(--teal); margin:1.15rem 0 0}
-.card .price small{display:block; font-family:"Schibsted Grotesk"; font-weight:400; font-size:var(--step--2); letter-spacing:0; color:var(--ink-soft); margin-top:0.3rem}
 .card .btn{margin-top:1.35rem; align-self:flex-start}
 /* the featured middle card, per the reference */
 .card--feature{background:var(--amber); border-color:var(--amber)}
 .card--feature .card-body{padding-top:1.5rem}
 .card--feature .meta,.card--feature p.desc{color:var(--amber-card-ink)}
-.card--feature .price{color:var(--teal-deep)}
-.card--feature .price small{color:var(--amber-card-ink-soft)}
 .card--feature .btn{background:var(--teal-deep); color:var(--amber)}
 .card--feature .btn .cap{background:var(--amber); color:var(--teal-deep)}
 .card--feature .btn:hover{background:var(--teal)}
@@ -282,25 +278,6 @@ h2{font-size:var(--step-2); max-width:17ch; letter-spacing:-0.032em}
   background:var(--teal-deep); color:var(--amber);
   padding:0.3rem 0.75rem; border-radius:5rem; margin-bottom:0.7rem;
 }
-
-/* ================= testimonials ================= */
-.voices{background:var(--lilac); padding-block:clamp(3.25rem,7vw,6rem)}
-.voices .wrap{display:grid; gap:clamp(2rem,4vw,3.25rem); grid-template-columns:1fr; align-items:start}
-@media (min-width:62rem){.voices .wrap{grid-template-columns:0.85fr 1.15fr}}
-.bigstat{display:flex; align-items:center; gap:1rem; margin-top:2rem}
-.bigstat b{font-family:"Gabarito"; font-weight:800; font-size:var(--step-3); line-height:0.9; letter-spacing:-0.05em; color:var(--teal)}
-.bigstat span{font-size:var(--step--1); color:var(--ink-soft); max-width:13rem}
-.quotes{columns:2; column-gap:1.25rem}
-@media (max-width:48rem){.quotes{columns:1}}
-.quote{
-  break-inside:avoid; background:var(--white); border-radius:var(--radius-sm);
-  padding:1.2rem 1.3rem 1.3rem; margin:0 0 1.25rem;
-  box-shadow:0 10px 26px -20px var(--shadow-ink-60);
-}
-.stars{display:flex; gap:0.14rem; color:var(--amber-deep); margin-bottom:0.7rem}
-.quote blockquote{margin:0; font-size:var(--step--1); color:var(--ink-soft); line-height:1.55}
-.quote figcaption{margin-top:0.85rem; font-size:var(--step--2); font-weight:600}
-.quote figcaption span{display:block; font-weight:400; color:var(--ink-soft); margin-top:0.1rem}
 
 /* ================= FAQ ================= */
 .faq{background:var(--white); padding-block:clamp(3.25rem,7vw,6rem)}
