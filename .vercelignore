@@ -10,10 +10,10 @@ qjfjxcmy*/
 images/_src/
 
 # Local tooling and planning docs, not part of the served site.
+# Markdown at the repo root is internal by default: these name competitors,
+# document unfinished content, and are not for public reading.
 .claude/
 .impeccable/
 tools/
 reference/
-PLAN.md
-PLAN-REVIEW-LOG.md
-README.md
+*.md
