@@ -80,22 +80,6 @@ img{height:auto}
 .skip-link:focus-visible{position:fixed; z-index:calc(var(--z-header) + 1); top:0.75rem; left:0.75rem; width:auto; height:auto; overflow:visible; clip-path:none; white-space:normal; padding:0.7rem 1rem; background:var(--white); color:var(--teal-deep); font-weight:700; text-decoration:none}
 :focus-visible{outline:3px solid var(--amber-deep); outline-offset:3px; border-radius:0.3rem}
 
-/* ================= utility bar ================= */
-.util{background:var(--teal-deep); color:var(--ink-on-dark)}
-/* Location, email and phone stay compact here. Expanding them to 44px made the bar
-   136px tall on a phone, and WCAG 2.5.8 allows it: every one of these links also
-   appears at a full 44px target in the footer, and the phone in the mobile menu. */
-.util .wrap{display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem 1.5rem; padding-block:0.6rem; font-size:var(--step--2)}
-.util a{color:inherit; text-decoration:none; display:inline-flex; align-items:center; gap:0.45rem; padding-block:0.2rem}
-.util a:hover{color:var(--amber)}
-.util a:active{color:var(--amber-deep)}
-/* Social icons are the only place these links exist, so they carry a real 44px box.
-   Gap >= 0.5rem keeps the two boxes from touching. */
-.util .social{margin-left:auto; display:flex; gap:0.5rem; margin-block:-0.6rem}
-.util .social a{width:2.75rem; height:2.75rem; min-height:2.75rem; justify-content:center; padding:0; margin:0}
-.util svg{flex:none}
-@media (max-width:40rem){.util .social{margin-left:0}}
-
 /* ================= header ================= */
 .head{position:sticky; top:0; z-index:var(--z-header); overflow:visible; background:var(--white-92); backdrop-filter:blur(12px); border-bottom:1px solid var(--line)}
 .head .wrap{display:flex; align-items:center; gap:1.25rem; min-height:4.75rem}
@@ -359,6 +343,9 @@ footer a:hover{color:var(--amber)}
 footer a:active{color:var(--amber-deep)}
 footer .about p{font-size:var(--step--1); color:var(--ink-on-dark-soft); max-width:32ch; margin:0}
 footer .about p + p{margin-top:0.7rem}
+footer .footer-social{display:flex; gap:0.5rem; margin-top:0.5rem}
+footer .footer-social a{width:2.75rem; height:2.75rem; justify-content:center; padding:0; border:1px solid var(--white-14); border-radius:50%}
+footer .footer-social svg{flex:none}
 .legal{margin-top:clamp(2rem,4vw,3rem); border-top:1px solid var(--white-14); padding-block:1.15rem; font-size:var(--step--2); display:flex; flex-wrap:wrap; gap:0.5rem 1.5rem}
 .legal p{margin:0}
 
