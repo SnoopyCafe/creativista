@@ -384,5 +384,11 @@
   </div>
 </footer>
 
+<script>
+  const mobileMenu = document.querySelector('.mobile-menu');
+  mobileMenu.querySelector('.mobile-menu-panel').addEventListener('click', (event) => {
+    if (event.target.closest('a')) mobileMenu.removeAttribute('open');
+  });
+</script>
 </body>
 </html>
