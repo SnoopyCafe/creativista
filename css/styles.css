@@ -182,14 +182,6 @@ h1 em{
 .orbit-photo{position:absolute; inset:9%; border-radius:50%; overflow:hidden}
 .orbit-photo picture{width:100%; height:100%}
 .orbit-photo img{width:100%; height:100%; object-fit:cover; object-position:50% 32%}
-.orbit-child{
-  position:absolute; width:4.4rem; height:4.4rem; border-radius:50%;
-  display:grid; place-items:center; background:var(--white);
-  border:0.35rem solid var(--white); box-shadow:0 14px 30px -14px var(--shadow-ink-45);
-}
-.orbit-child svg{width:2.1rem; height:2.1rem;}
-.orbit-child--left{left:-1.5rem; top:36%; background:var(--dot-plum); color:var(--white)}
-.orbit-child--right{right:-1.5rem; bottom:18%; background:var(--dot-sky); color:var(--white)}
 .pip{
   position:absolute; width:3.6rem; height:3.6rem; border-radius:50%;
   display:grid; place-items:center; background:var(--white);
