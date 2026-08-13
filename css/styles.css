@@ -181,7 +181,7 @@ h1 em{
 .orbit-ring{position:absolute; inset:2%; border-radius:50%; border:1.5px dashed var(--amber-line)}
 .orbit-photo{position:absolute; inset:9%; border-radius:50%; overflow:hidden}
 .orbit-photo picture{width:100%; height:100%}
-.orbit-photo img{width:100%; height:100%; object-fit:contain}
+.orbit-photo img{width:100%; height:100%; object-fit:cover}
 .pip{
   position:absolute; width:3.6rem; height:3.6rem; border-radius:50%;
   display:grid; place-items:center; background:var(--white);
