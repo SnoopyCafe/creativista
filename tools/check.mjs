@@ -52,10 +52,10 @@ const linkedPhoneCopies = phoneAnchors.flatMap((anchor) => anchor.match(/954-833
 const strayCanonicalPhone = visibleHtml.replace(/href=["']tel:\+19548336672["']/gi, '').includes('+19548336672');
 assert('phone number appears only in tel:+19548336672 links', phoneAnchors.length > 0 && visiblePhoneCopies.length === linkedPhoneCopies.length && !strayCanonicalPhone, `${phoneAnchors.length} tel links; ${visiblePhoneCopies.length - linkedPhoneCopies.length} bare display copies`);
 
-const email = 'info@creativistalearning.org';
-const emailAnchors = visibleHtml.match(/<a\b[^>]*href=["']mailto:info@creativistalearning\.org["'][^>]*>[\s\S]*?<\/a>/gi) ?? [];
-const visibleEmailCopies = visibleHtml.match(/info@creativistalearning\.org/gi) ?? [];
-const linkedEmailOccurrences = emailAnchors.reduce((sum, anchor) => sum + (anchor.match(/info@creativistalearning\.org/gi) ?? []).length, 0);
+const email = 'info@creativistacharm.com';
+const emailAnchors = visibleHtml.match(/<a\b[^>]*href=["']mailto:info@creativistacharm\.com["'][^>]*>[\s\S]*?<\/a>/gi) ?? [];
+const visibleEmailCopies = visibleHtml.match(/info@creativistacharm\.com/gi) ?? [];
+const linkedEmailOccurrences = emailAnchors.reduce((sum, anchor) => sum + (anchor.match(/info@creativistacharm\.com/gi) ?? []).length, 0);
 assert('email appears only as a mailto link', emailAnchors.length > 0 && visibleEmailCopies.length === linkedEmailOccurrences, `${emailAnchors.length} mailto links; ${visibleEmailCopies.length - linkedEmailOccurrences} unlinked occurrences`);
 
 const forbidden = ['images.pexels.com', 'creativistalearning.org/_assets'];
