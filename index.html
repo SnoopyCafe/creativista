@@ -368,6 +368,36 @@
   </div>
 </footer>
 
+<dialog class="booking-dialog" id="booking-dialog" aria-labelledby="booking-dialog-title">
+  <div class="booking-dialog-shell">
+    <div class="booking-dialog-head">
+      <div>
+        <p class="booking-dialog-kicker">Free 15-minute call</p>
+        <h2 id="booking-dialog-title">Choose a time that works for you</h2>
+      </div>
+      <button class="booking-dialog-close" type="button" aria-label="Close scheduling dialog">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="m4 4 12 12M16 4 4 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <p class="sr" id="booking-live" aria-live="polite"></p>
+    <div class="booking-dialog-body">
+      <div class="booking-loading" aria-hidden="true">
+        <span class="booking-spinner"></span>
+        <span>Loading available times…</span>
+      </div>
+      <div class="booking-widget" id="booking-widget"></div>
+      <div class="booking-error" role="alert" hidden>
+        <h3>Calendly could not load</h3>
+        <p>Check your connection and try again, or continue directly on Calendly.</p>
+        <div class="btn-row">
+          <button class="booking-retry" type="button">Try again</button>
+          <a href="https://calendly.com/creativistacharm" target="_blank" rel="noopener">Open Calendly</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
+
 <script>
   const mobileMenu = document.querySelector('.mobile-menu');
   mobileMenu.querySelector('.mobile-menu-panel').addEventListener('click', (event) => {
@@ -377,7 +407,17 @@
   const bookingLinks = document.querySelectorAll('a[href="https://calendly.com/creativistacharm"]');
   const calendlyWidgetStyles = 'https://assets.calendly.com/assets/external/widget.css';
   const calendlyWidgetScript = 'https://assets.calendly.com/assets/external/widget.js';
+  const bookingDialog = document.querySelector('#booking-dialog');
+  const bookingWidget = document.querySelector('#booking-widget');
+  const bookingLoading = document.querySelector('.booking-loading');
+  const bookingError = document.querySelector('.booking-error');
+  const bookingClose = document.querySelector('.booking-dialog-close');
+  const bookingRetry = document.querySelector('.booking-retry');
+  const bookingLive = document.querySelector('#booking-live');
   let calendlyWidgetPromise;
+  let calendlyInitialized = false;
+  let bookingTrigger;
+  let loadingReminder;
 
   function loadCalendlyWidget() {
     if (window.Calendly) return Promise.resolve();
@@ -395,29 +435,108 @@
       script.src = calendlyWidgetScript;
       script.async = true;
       script.addEventListener('load', resolve, { once: true });
-      script.addEventListener('error', reject, { once: true });
+      script.addEventListener('error', () => {
+        script.remove();
+        calendlyWidgetPromise = null;
+        reject(new Error('Calendly failed to load'));
+      }, { once: true });
       document.head.append(script);
     });
 
     return calendlyWidgetPromise;
   }
 
+  function setBookingLoading(isLoading) {
+    bookingLoading.hidden = !isLoading;
+    bookingWidget.toggleAttribute('aria-busy', isLoading);
+  }
+
+  function showBookingError() {
+    window.clearTimeout(loadingReminder);
+    setBookingLoading(false);
+    bookingError.hidden = false;
+    bookingLive.textContent = 'Calendly could not load. Try again or open Calendly directly.';
+    bookingRetry.focus();
+  }
+
+  async function initializeCalendly() {
+    bookingError.hidden = true;
+
+    if (calendlyInitialized) {
+      setBookingLoading(false);
+      bookingLive.textContent = 'Scheduling form loaded.';
+      return;
+    }
+
+    setBookingLoading(true);
+    bookingLive.textContent = 'Loading available appointment times.';
+
+    try {
+      await loadCalendlyWidget();
+
+      if (!calendlyInitialized) {
+        window.Calendly.initInlineWidget({
+          url: 'https://calendly.com/creativistacharm',
+          parentElement: bookingWidget
+        });
+        calendlyInitialized = true;
+      }
+
+      window.clearTimeout(loadingReminder);
+      loadingReminder = window.setTimeout(() => {
+        if (!bookingLoading.hidden) {
+          bookingLive.textContent = 'Calendly is taking longer than expected to load. You can continue waiting or open Calendly directly.';
+        }
+      }, 12000);
+    } catch {
+      showBookingError();
+    }
+  }
+
+  bookingClose.addEventListener('click', () => bookingDialog.close());
+  bookingRetry.addEventListener('click', initializeCalendly);
+
+  bookingDialog.addEventListener('click', (event) => {
+    if (event.target === bookingDialog) bookingDialog.close();
+  });
+
+  bookingDialog.addEventListener('close', () => {
+    window.clearTimeout(loadingReminder);
+    const triggerToRestore = bookingTrigger;
+    window.setTimeout(() => triggerToRestore?.focus(), 0);
+  });
+
+  window.addEventListener('message', (event) => {
+    if (event.origin !== 'https://calendly.com' || !event.data?.event?.startsWith('calendly.')) return;
+
+    if (event.data.event === 'calendly.profile_page_viewed' || event.data.event === 'calendly.event_type_viewed') {
+      window.clearTimeout(loadingReminder);
+      setBookingLoading(false);
+      bookingLive.textContent = 'Scheduling form loaded.';
+    }
+
+    if (event.data.event === 'calendly.event_scheduled') {
+      bookingLive.textContent = 'Your call is scheduled.';
+    }
+  });
+
   bookingLinks.forEach((link) => {
     link.setAttribute('aria-haspopup', 'dialog');
+    link.setAttribute('aria-controls', 'booking-dialog');
     link.addEventListener('click', async (event) => {
       if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
 
       event.preventDefault();
-      link.setAttribute('aria-busy', 'true');
+      bookingTrigger = link;
 
-      try {
-        await loadCalendlyWidget();
-        window.Calendly.initPopupWidget({ url: link.href });
-      } catch {
+      if (typeof bookingDialog.showModal !== 'function') {
         window.location.assign(link.href);
-      } finally {
-        link.removeAttribute('aria-busy');
+        return;
       }
+
+      bookingDialog.showModal();
+      bookingClose.focus();
+      initializeCalendly();
     });
   });
 </script>
