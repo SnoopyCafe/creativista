@@ -322,7 +322,7 @@ footer .footer-social svg{flex:none}
 
 /* ================= accessible Calendly dialog ================= */
 .booking-dialog{
-  width:min(70rem,calc(100% - 2rem)); height:min(52rem,calc(100dvh - 2rem));
+  width:min(64rem,calc(100% - 2rem)); height:min(54rem,calc(100dvh - 2rem));
   max-width:none; max-height:none; margin:auto; padding:0; overflow:hidden;
   color:var(--ink); background:var(--white); border:0; border-radius:var(--radius-sm);
   box-shadow:0 8px 12px -6px var(--shadow-teal-45); z-index:var(--z-modal);
@@ -376,9 +376,14 @@ footer .footer-social svg{flex:none}
 .booking-retry{cursor:pointer; color:var(--teal); background:var(--white); border:1.5px solid var(--teal)}
 @media (max-width:40rem){
   .booking-dialog{width:100%; height:100dvh; border-radius:0}
-  .booking-dialog-head{padding-inline:var(--gutter)}
+  .booking-dialog-shell{grid-template-rows:3.5rem minmax(0,1fr)}
+  .booking-dialog-head{
+    padding-block:0.3rem;
+    padding-left:max(0.75rem,env(safe-area-inset-left));
+    padding-right:max(0.5rem,env(safe-area-inset-right));
+  }
   .booking-dialog-kicker{display:none}
-  .booking-dialog h2{font-size:var(--step-0); line-height:1.2}
+  .booking-dialog h2{font-size:var(--step--1); line-height:1.15; letter-spacing:-0.015em}
 }
 
 .ph{background:var(--amber-tint); box-shadow:0 0 0 1px var(--amber-deep); border-radius:0.25rem; padding:0 0.3em}
