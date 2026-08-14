@@ -289,18 +289,52 @@ h2{font-size:var(--step-2); max-width:17ch; letter-spacing:-0.032em}
 .faq details[open] summary::after{content:"−"}
 .faq details p{margin:0 0 1.3rem; color:var(--ink-soft); font-size:var(--step--1); max-width:68ch}
 
-/* ================= closing CTA band ================= */
-.close{background:var(--teal); color:var(--white); padding-block:clamp(3.25rem,7vw,5.5rem)}
-.close .wrap{display:grid; gap:clamp(2rem,4vw,3.5rem); grid-template-columns:1fr; align-items:center}
-@media (min-width:56rem){.close .wrap{grid-template-columns:1.05fr 0.95fr}}
-.close h2{color:var(--white); max-width:16ch}
-.close .label{color:var(--amber)}
-.close p{color:var(--ink-on-dark); margin:1.1rem 0 2rem}
-.close picture{width:100%}
-.close img{border-radius:var(--radius); aspect-ratio:4/3; object-fit:cover; width:100%}
-.close .btn-line{background:transparent; color:var(--white); border-color:var(--white-35)}
-.close .btn-line .cap{background:var(--white); color:var(--teal)}
-.close .btn-line:hover{background:var(--white-09); border-color:var(--white)}
+/* ================= before you call ================= */
+.before-call{background:var(--teal); color:var(--white); padding-block:clamp(3.25rem,7vw,5.5rem)}
+.before-call .wrap{display:grid; gap:1.5rem}
+.before-call h2{color:var(--white); max-width:12ch}
+.before-call-intro > p:last-child{color:var(--ink-on-dark); margin:1rem 0 0; max-width:37rem}
+.before-call-facts{margin:0; border-top:1px solid var(--white-35)}
+.before-call-fact{
+  position:relative; display:grid; grid-template-columns:minmax(5.6rem,0.42fr) minmax(0,1fr);
+  gap:1rem; padding:0.9rem 0 0.9rem 1.15rem; border-bottom:1px solid var(--white-35);
+}
+.before-call-fact::before{
+  content:""; position:absolute; left:0; top:1.38rem; width:0.42rem; height:0.42rem;
+  border-radius:50%; background:var(--amber);
+}
+.before-call-fact dt,.before-call-heading{
+  color:var(--amber); font-family:"Gabarito",system-ui,sans-serif; font-size:var(--step--1);
+  font-weight:800; line-height:1.25;
+}
+.before-call-fact dd{margin:0; color:var(--white); font-weight:600; line-height:1.35}
+.before-call-fact dd span{color:var(--ink-on-dark-soft); font-size:var(--step--1); font-weight:400}
+.before-call-fact .before-call-terms{display:grid; gap:0.75rem}
+.before-call-fact .before-call-terms span{color:var(--white); font-size:var(--step--1); line-height:1.5}
+.before-call-fact .before-call-terms strong{font-family:"Gabarito",system-ui,sans-serif; font-weight:800}
+.before-call-included{
+  padding:1.25rem; color:var(--teal-deep); background:var(--lilac-2); border-radius:var(--radius-sm);
+}
+.before-call-included .before-call-heading{color:var(--teal-deep); margin:0 0 0.8rem}
+.before-call-included ul{display:grid; gap:0.45rem; margin:0; padding:0; list-style:none}
+.before-call-included li{position:relative; padding-left:1.45rem; line-height:1.4}
+.before-call-included li::before{content:""; position:absolute; left:0; top:0.52em; width:0.58rem; height:0.58rem; border-radius:50%; background:var(--dot-plum)}
+.before-call-step-up{padding:0.2rem 0}
+.before-call-step-up .before-call-heading{color:var(--lilac-2); margin:0 0 0.4rem}
+.before-call-step-up > p:last-child{color:var(--ink-on-dark); margin:0; font-size:var(--step--1); line-height:1.5}
+.before-call-action{display:grid; gap:0.75rem}
+.before-call-cta{width:100%; min-height:3.75rem; justify-content:space-between; padding-left:1.15rem; white-space:normal; line-height:1.15}
+.before-call-cta .cap{width:2.55rem; height:2.55rem}
+.before-call-action p{color:var(--ink-on-dark); margin:0; font-size:var(--step--1)}
+.before-call-action strong{color:var(--white)}
+@media (min-width:48rem){
+  .before-call .wrap{grid-template-columns:minmax(0,0.85fr) minmax(24rem,1.15fr); gap:2rem clamp(2.5rem,6vw,5rem); align-items:start}
+  .before-call-intro{position:sticky; top:7rem}
+  .before-call-facts{grid-column:2; grid-row:1 / span 2}
+  .before-call-included{grid-column:1}
+  .before-call-step-up{grid-column:1}
+  .before-call-action{grid-column:1 / -1; grid-template-columns:minmax(20rem,0.9fr) minmax(15rem,0.55fr); align-items:center; gap:1.5rem; padding-top:0.25rem}
+}
 
 /* ================= footer ================= */
 footer{background:var(--teal-deep); color:var(--ink-on-dark); padding-block:clamp(2.75rem,5vw,4rem) 0}
