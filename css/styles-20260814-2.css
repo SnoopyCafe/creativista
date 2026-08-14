@@ -1,3 +1,4 @@
+/* Versioned asset filename prevents stale CDN and mobile-browser caches. */
 :root{
   /* brand equity: the existing deep teal, kept */
   --teal:       #0B3A3F;
