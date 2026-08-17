@@ -85,13 +85,9 @@ img{height:auto}
 
 /* ================= header ================= */
 .head{position:sticky; top:0; z-index:var(--z-header); overflow:visible; background:var(--white-92); backdrop-filter:blur(12px); border-bottom:1px solid var(--line)}
-.head .wrap{display:flex; align-items:center; gap:1.25rem; min-height:4.75rem}
-.brand{display:flex; align-items:center; gap:0.7rem; text-decoration:none; color:var(--ink); margin-right:auto}
-.brand-badge{width:3rem; height:2.55rem; display:grid; place-items:center; flex:none}
-.brand-badge img{width:100%; height:auto}
-.brand-name{font-family:"Gabarito"; font-weight:800; font-size:var(--step-0); letter-spacing:-0.035em; line-height:1.05}
-.brand-name span{font-weight:500; color:var(--teal)}
-.brand-tag{display:block; font-family:"Schibsted Grotesk"; font-size:var(--step--2); font-weight:400; letter-spacing:0; color:var(--ink-soft); margin-top:0.1rem}
+.head .wrap{display:flex; align-items:center; gap:1.25rem; min-height:6.75rem}
+.brand{display:flex; align-items:center; text-decoration:none; margin-right:auto; flex:none}
+.brand-logo{display:block; width:6.75rem; height:auto}
 .nav{display:flex; align-items:center; gap:1.6rem; font-size:var(--step--1); font-weight:500}
 .nav a{color:var(--ink-soft); text-decoration:none; padding-block:0.4rem}
 .nav a:hover{color:var(--teal)}
@@ -128,9 +124,8 @@ img{height:auto}
 }
 @media (max-width:40rem){.head .wrap > .btn{display:none}}
 @media (max-width:30rem){
-  .brand-tag{display:none}
-  .brand-badge{width:2.6rem; height:2.2rem}
-  .head .wrap{min-height:4.1rem; gap:0.75rem}
+  .brand-logo{width:5.25rem}
+  .head .wrap{min-height:5.5rem; gap:0.75rem}
 }
 
 /* ================= pill buttons ================= */
