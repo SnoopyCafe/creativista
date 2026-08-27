@@ -1,0 +1,23 @@
+# Block all web access to the internal working files.
+# These files are for local reference only, never for delivery over HTTP.
+
+# Apache 2.4
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+
+# Apache 2.2 fallback
+<IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+</IfModule>
+
+# Belt and braces: never hand these files to a browser even if the rules above
+# are overridden somewhere upstream.
+<FilesMatch ".*">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+</FilesMatch>
+
+Options -Indexes
