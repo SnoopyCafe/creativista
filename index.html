@@ -560,5 +560,43 @@
     });
   });
 </script>
+<!-- Referrer capture — paste directly above </body> on every page.
+     Sends one row per visit, not per page view. No cookies, no third party. -->
+<script>
+(function () {
+  try {
+    // One record per browser tab session, so a five-page visit logs once.
+    if (sessionStorage.getItem('refLogged')) return;
+    sessionStorage.setItem('refLogged', '1');
+  } catch (e) {
+    // Private mode or storage disabled — fall through and log this hit.
+  }
+
+  var params = new URLSearchParams(window.location.search);
+  var payload = {
+    referrer:     document.referrer || '',
+    landing:      window.location.pathname + window.location.search,
+    utm_source:   params.get('utm_source') || '',
+    utm_medium:   params.get('utm_medium') || '',
+    utm_campaign: params.get('utm_campaign') || '',
+    screen:       window.innerWidth + 'x' + window.innerHeight
+  };
+
+  var url = '/ref/collect.php';
+  var body = JSON.stringify(payload);
+
+  // sendBeacon survives the user navigating away mid-request.
+  if (navigator.sendBeacon) {
+    navigator.sendBeacon(url, new Blob([body], { type: 'application/json' }));
+  } else {
+    fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: body,
+      keepalive: true
+    }).catch(function () { /* never break the page over analytics */ });
+  }
+})();
+</script>
 </body>
 </html>

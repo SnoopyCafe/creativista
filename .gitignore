@@ -11,3 +11,7 @@ old/
 # DB dumps: may contain user emails, password hashes, form submissions. Never commit.
 *.sql
 .vercel
+
+# Referrer capture logs are generated at runtime and may contain visitor data.
+ref/data/*.csv
+ref/data/*.log
