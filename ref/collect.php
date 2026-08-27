@@ -16,8 +16,6 @@ declare(strict_types=1);
 $ALLOWED_HOSTS = [
     'creativistapods.com',
     'www.creativistapods.com',
-    'creativistacharm.com',
-    'www.creativistacharm.com',
 ];
 
 $DATA_DIR  = __DIR__ . '/data';
