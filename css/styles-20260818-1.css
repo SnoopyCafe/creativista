@@ -173,36 +173,25 @@ h1 em{
 .assure span{display:inline-flex; align-items:flex-start; gap:0.45rem; flex:1 1 16rem; min-width:0; max-width:100%}
 .assure svg{color:var(--teal); flex:none}
 
-/* hero video composition */
-.orbit{position:relative; aspect-ratio:5/3; max-width:40rem; margin-inline:auto; margin-bottom:3.75rem; width:100%}
-.orbit-ring{position:absolute; inset:-4%; border-radius:calc(var(--radius) + 0.4rem); border:1.5px dashed var(--amber-line)}
-.orbit-photo{position:absolute; inset:0; border-radius:var(--radius); overflow:hidden; box-shadow:0 24px 50px -28px var(--shadow-ink-55)}
+/* orbit composition */
+.orbit{position:relative; aspect-ratio:1; max-width:32rem; margin-inline:auto; width:100%}
+.orbit-disc{position:absolute; inset:9%; border-radius:50%; background:var(--amber)}
+.orbit-ring{position:absolute; inset:2%; border-radius:50%; border:1.5px dashed var(--amber-line)}
+.orbit-photo{position:absolute; inset:9%; border-radius:50%; overflow:hidden}
 .orbit-photo picture{width:100%; height:100%}
-.orbit-photo img,.orbit-photo video{display:block; width:100%; height:100%; object-fit:cover}
-.hero-video-poster{position:absolute; z-index:1; inset:0; pointer-events:none}
-.hero-video-controls{position:absolute; z-index:2; top:calc(100% + 0.75rem); left:50%; display:flex; gap:0.45rem; transform:translateX(-50%)}
-.video-control{display:grid; place-items:center; width:2.75rem; height:2.75rem; padding:0; border:0; border-radius:50%; background:var(--white-92); color:var(--teal-deep); box-shadow:0 6px 18px -8px var(--shadow-ink-45); cursor:pointer}
-.video-control svg{width:1.25rem; height:1.25rem}
-.video-control[hidden],.hero-video-poster[hidden]{display:none!important}
-.video-control .icon-play{display:none}
-.video-control[aria-pressed="false"] .icon-play{display:block}
-.video-control[aria-pressed="false"] .icon-pause{display:none}
+.orbit-photo img{width:100%; height:100%; object-fit:cover}
 .pip{
   position:absolute; width:3.6rem; height:3.6rem; border-radius:50%;
   display:grid; place-items:center; background:var(--white);
   box-shadow:0 6px 18px -8px var(--shadow-ink-45);
 }
 .pip svg{width:1.5rem; height:1.5rem}
-.pip-1{top:-1.75rem; left:-1.75rem; background:var(--dot-sky); color:var(--dot-sky-ink)}
-.pip-3{top:-1.75rem; right:-1.75rem; background:var(--dot-mint); color:var(--dot-mint-ink)}
-.pip-4{right:-1.75rem; bottom:-1.75rem; background:var(--dot-plum); color:var(--dot-plum-ink)}
-.pip-5{bottom:-1.75rem; left:-1.75rem; background:var(--amber-tint); color:var(--amber-deep)}
+.pip-1{top:2%;  left:26%; background:var(--dot-sky);  color:var(--dot-sky-ink)}
+.pip-2{top:16%; right:2%;  background:var(--dot-rose); color:var(--dot-rose-ink)}
+.pip-3{bottom:20%; right:-1%; background:var(--dot-mint); color:var(--dot-mint-ink)}
+.pip-4{bottom:1%;  left:38%;  background:var(--dot-plum); color:var(--dot-plum-ink)}
+.pip-5{top:34%; left:-2%;  background:var(--amber-tint); color:var(--amber-deep)}
 @media (max-width:34rem){.pip{width:2.9rem; height:2.9rem} .pip svg{width:1.2rem; height:1.2rem}}
-@media (max-width:61.99rem){
-  .orbit{aspect-ratio:5/3; max-width:none}
-  .orbit-ring,.pip{display:none}
-  .orbit-photo{inset:0; border-radius:var(--radius)}
-}
 
 /* ================= feature row (no cards) ================= */
 .features{padding-block:clamp(2.75rem,6vw,4.5rem); border-top:1px solid var(--line)}
@@ -446,7 +435,7 @@ footer .footer-social svg{flex:none}
   .reveal{animation:rise 0.85s var(--ease) both; animation-timeline:view(); animation-range:entry 0% entry 55%}
   @keyframes rise{from{opacity:0; transform:translateY(1.6rem)} to{opacity:1; transform:none}}
   .pip{animation:float 5s ease-in-out infinite alternate}
-  .pip-3{animation-delay:-2.4s}
+  .pip-2{animation-delay:-1.2s} .pip-3{animation-delay:-2.4s}
   .pip-4{animation-delay:-3.1s} .pip-5{animation-delay:-0.6s}
   @keyframes float{from{transform:translateY(-0.32rem)} to{transform:translateY(0.32rem)}}
 }

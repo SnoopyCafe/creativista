@@ -24,6 +24,30 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Schibsted+Grotesk:ital,wght@0,400..800;1,400..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles-20260818-1.css?v=20260831-11">
+<style>
+/* Test-page-only hero video composition. */
+.orbit{position:relative; aspect-ratio:5/3; max-width:40rem; margin-inline:auto; margin-bottom:3.75rem; width:100%}
+.orbit-ring{position:absolute; inset:-4%; border-radius:calc(var(--radius) + 0.4rem); border:1.5px dashed var(--amber-line)}
+.orbit-photo{position:absolute; inset:0; border-radius:var(--radius); overflow:hidden; box-shadow:0 24px 50px -28px var(--shadow-ink-55)}
+.orbit-photo img,.orbit-photo video{display:block; width:100%; height:100%; object-fit:cover}
+.hero-video-poster{position:absolute; z-index:1; inset:0; pointer-events:none}
+.hero-video-controls{position:absolute; z-index:2; top:calc(100% + 0.75rem); left:50%; display:flex; gap:0.45rem; transform:translateX(-50%)}
+.video-control{display:grid; place-items:center; width:2.75rem; height:2.75rem; padding:0; border:0; border-radius:50%; background:var(--white-92); color:var(--teal-deep); box-shadow:0 6px 18px -8px var(--shadow-ink-45); cursor:pointer}
+.video-control svg{width:1.25rem; height:1.25rem}
+.video-control[hidden],.hero-video-poster[hidden]{display:none!important}
+.video-control .icon-play{display:none}
+.video-control[aria-pressed="false"] .icon-play{display:block}
+.video-control[aria-pressed="false"] .icon-pause{display:none}
+.pip-1{top:-1.75rem; left:-1.75rem}
+.pip-3{top:-1.75rem; right:-1.75rem; bottom:auto}
+.pip-4{right:-1.75rem; bottom:-1.75rem; left:auto}
+.pip-5{bottom:-1.75rem; left:-1.75rem; top:auto}
+@media (max-width:61.99rem){
+  .orbit{aspect-ratio:5/3; max-width:none}
+  .orbit-ring,.pip{display:none}
+  .orbit-photo{inset:0; border-radius:var(--radius)}
+}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
