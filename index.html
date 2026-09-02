@@ -24,6 +24,33 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Schibsted+Grotesk:ital,wght@0,400..800;1,400..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles-20260818-1.css">
+<style>
+/* Production hero video composition. */
+.orbit{position:relative; aspect-ratio:5/3; max-width:40rem; margin-inline:auto; margin-bottom:3.75rem; width:100%}
+.orbit-ring{position:absolute; inset:-4%; border-radius:calc(var(--radius) + 0.4rem); border:1.5px dashed var(--amber-line)}
+.orbit-photo{position:absolute; inset:0; border-radius:var(--radius); overflow:hidden; box-shadow:0 24px 50px -28px var(--shadow-ink-55)}
+.orbit-photo img,.orbit-photo video{display:block; width:100%; height:100%; object-fit:cover}
+.hero-video-poster{position:absolute; z-index:1; inset:0; pointer-events:none}
+.hero-video-controls{position:absolute; z-index:2; top:calc(100% + 0.75rem); left:50%; display:flex; gap:0.45rem; transform:translateX(-50%)}
+.video-control{display:grid; place-items:center; width:2.75rem; height:2.75rem; padding:0; border:0; border-radius:50%; background:var(--white-92); color:var(--teal-deep); box-shadow:0 6px 18px -8px var(--shadow-ink-45); cursor:pointer}
+.video-control:hover{background:var(--amber-tint)}
+.video-control:active{background:var(--amber)}
+.video-control svg{width:1.25rem; height:1.25rem}
+.video-control[hidden],.hero-video-poster[hidden]{display:none!important}
+.video-control .icon-play{display:none}
+.video-control[aria-pressed="false"] .icon-play{display:block}
+.video-control[aria-pressed="false"] .icon-pause{display:none}
+.pip-1{top:-1.75rem; left:-1.75rem}
+.pip-3{top:-1.75rem; right:-1.75rem; bottom:auto}
+.pip-4{right:-1.75rem; bottom:-1.75rem; left:auto}
+.pip-5{bottom:-1.75rem; left:-1.75rem; top:auto}
+@media (max-width:61.99rem){
+  .hero .wrap>*{min-width:0}
+  .orbit{aspect-ratio:5/3; max-width:none}
+  .orbit-ring,.pip{display:none}
+  .orbit-photo{inset:0; border-radius:var(--radius)}
+}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -95,16 +122,23 @@
       </div>
 
       <div class="orbit">
-        <span class="orbit-disc" aria-hidden="true"></span>
         <span class="orbit-ring" aria-hidden="true"></span>
         <div class="orbit-photo">
-          <picture>
-            <source type="image/webp" srcset="images/pod-reading-v2-800.webp 800w, images/pod-reading-v2-1600.webp 1600w" sizes="(min-width: 1248px) 512px, (min-width: 992px) 40vw, calc(100vw - 2.3rem)">
-            <img src="images/pod-reading-v2-800.jpg" srcset="images/pod-reading-v2-800.jpg 800w, images/pod-reading-v2-1600.jpg 1600w" sizes="(min-width: 1248px) 512px, (min-width: 992px) 40vw, calc(100vw - 2.3rem)" width="1200" height="800" alt="Four children sit together and share a picture book in a colorful school library." fetchpriority="high">
-          </picture>
+          <video id="heroVideo" width="1280" height="640" muted playsinline preload="auto" poster="images/hero_new_teacher-poster.jpg?v=20260901-1" aria-label="A teacher leads a small learning pod in a school library.">
+            <source src="images/hero_new_teacher.mp4?v=20260902-2" type="video/mp4">
+          </video>
+          <img class="hero-video-poster" id="heroVideoPoster" src="images/hero_new_teacher-poster.jpg?v=20260901-1" width="1280" height="640" alt="" aria-hidden="true">
+        </div>
+        <div class="hero-video-controls" aria-label="Video controls">
+          <button class="video-control" id="heroPlayback" type="button" aria-label="Play video" aria-controls="heroVideo" aria-pressed="false">
+            <svg class="icon-play" aria-hidden="true" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z" fill="currentColor"/></svg>
+            <svg class="icon-pause" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 5h4v14H7zM14 5h4v14h-4z" fill="currentColor"/></svg>
+          </button>
+          <button class="video-control" id="heroSound" type="button" aria-label="Turn sound on" aria-controls="heroVideo" hidden>
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M4 10v4h4l5 4V6L8 10H4Z" fill="currentColor"/><path d="m17 9 4 6m0-6-4 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
         </div>
         <span class="pip pip-1" aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M4 5.5h6a2.5 2.5 0 0 1 2 1 2.5 2.5 0 0 1 2-1h6v12h-6a2.5 2.5 0 0 0-2 1 2.5 2.5 0 0 0-2-1H4v-12Z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M12 6.5v11" stroke="currentColor" stroke-width="1.9"/></svg></span>
-        <span class="pip pip-2" aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M5 19V7.5a2 2 0 0 1 2-2h6l6 6V19a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2Z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M8.5 13.5h7M8.5 16.5h4.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span>
         <span class="pip pip-3" aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7.6" stroke="currentColor" stroke-width="1.9"/><path d="M12 7.6V12l3 1.8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span>
         <span class="pip pip-4" aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="m12 4 8.5 4-8.5 4-8.5-4L12 4Z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M7 10.4V15c0 1.6 2.2 2.9 5 2.9s5-1.3 5-2.9v-4.6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span>
         <span class="pip pip-5" aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M12 4.5a5 5 0 0 0-3 9v1.8h6V13.5a5 5 0 0 0-3-9Z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M10 18.5h4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span>
@@ -418,6 +452,91 @@
 </dialog>
 
 <script>
+  const heroVideo = document.querySelector('#heroVideo');
+  const heroVideoPoster = document.querySelector('#heroVideoPoster');
+  const heroPlayback = document.querySelector('#heroPlayback');
+  const heroSound = document.querySelector('#heroSound');
+  const heroMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const heroPlayedCookie = 'creativistaHeroVideoPlayed';
+
+  function hasPlayedHeroVideo() {
+    return document.cookie.split('; ').some((cookie) => cookie.startsWith(`${heroPlayedCookie}=`));
+  }
+
+  function rememberHeroVideoPlayback() {
+    document.cookie = `${heroPlayedCookie}=1; Max-Age=31536000; Path=/; SameSite=Lax`;
+  }
+
+  function showHeroVideoPoster() {
+    heroVideo.pause();
+    heroVideoPoster.hidden = false;
+
+    if (heroVideo.readyState >= 1) heroVideo.currentTime = 0;
+    else heroVideo.addEventListener('loadedmetadata', () => { heroVideo.currentTime = 0; }, { once: true });
+
+    syncHeroVideoControls();
+  }
+
+  function syncHeroVideoControls() {
+    const isPlaying = !heroVideo.paused && !heroVideo.ended;
+    heroPlayback.setAttribute('aria-pressed', String(isPlaying));
+    heroPlayback.setAttribute('aria-label', isPlaying ? 'Pause video' : 'Play video');
+    heroSound.hidden = !(isPlaying && heroVideo.muted);
+  }
+
+  function startHeroVideo() {
+    if (heroMotionQuery.matches || hasPlayedHeroVideo()) {
+      showHeroVideoPoster();
+      return;
+    }
+
+    heroVideo.muted = true;
+    heroVideo.defaultMuted = true;
+    heroVideo.play().catch(syncHeroVideoControls);
+  }
+
+  if (document.readyState === 'complete') startHeroVideo();
+  else window.addEventListener('load', startHeroVideo, { once: true });
+
+  heroPlayback.addEventListener('click', () => {
+    if (heroVideo.paused) {
+      if (heroVideo.ended || heroVideo.currentTime >= heroVideo.duration - 0.1) heroVideo.currentTime = 0;
+      heroVideo.muted = false;
+      heroVideo.play().catch(syncHeroVideoControls);
+    } else {
+      heroVideo.pause();
+    }
+  });
+
+  heroSound.addEventListener('click', () => {
+    heroVideo.muted = false;
+    syncHeroVideoControls();
+  });
+
+  heroVideo.addEventListener('play', () => {
+    rememberHeroVideoPlayback();
+    heroVideoPoster.hidden = true;
+  });
+
+  heroVideo.addEventListener('ended', showHeroVideoPoster);
+  heroVideo.addEventListener('error', () => {
+    heroVideoPoster.hidden = false;
+    heroPlayback.hidden = true;
+    heroSound.hidden = true;
+  });
+
+  heroMotionQuery.addEventListener?.('change', (event) => {
+    if (event.matches) showHeroVideoPoster();
+  });
+
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted && hasPlayedHeroVideo()) showHeroVideoPoster();
+  });
+
+  ['play', 'pause', 'ended'].forEach((eventName) => {
+    heroVideo.addEventListener(eventName, syncHeroVideoControls);
+  });
+
   const mobileMenu = document.querySelector('.mobile-menu');
   mobileMenu.querySelector('.mobile-menu-panel').addEventListener('click', (event) => {
     if (event.target.closest('a')) mobileMenu.removeAttribute('open');
