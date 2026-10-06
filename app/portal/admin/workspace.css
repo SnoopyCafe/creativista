@@ -1,0 +1,108 @@
+.admin-shell{min-height:100vh;background:#f7f9f8;color:#163b40}.admin-header{display:flex;align-items:center;gap:24px;padding:18px 32px;border-bottom:1px solid #dbe5e4;background:white}.admin-header img{width:130px}.admin-header span{font-weight:700;flex:1}.admin-header a{color:#0b3a3f}.admin-layout{display:grid;grid-template-columns:210px minmax(0,1fr);max-width:1600px;margin:auto}.admin-layout nav{padding:32px 16px;border-right:1px solid #dbe5e4;display:flex;flex-direction:column;gap:8px}.admin-layout nav button{background:transparent;color:#163b40;text-align:left;padding:14px;border:0;border-radius:10px;font-size:16px}.admin-layout nav button[aria-current]{background:#0b3a3f;color:white}.admin-layout main{padding:36px;min-width:0}.admin-title{margin-bottom:28px}.admin-title p{font-size:12px;letter-spacing:2px}.admin-title h1{font-size:44px;margin:8px 0;font-family:var(--font-heading),sans-serif}.admin-title span{color:#587277}.admin-card{background:white;border:1px solid #dbe5e4;border-radius:16px;padding:28px;min-width:0}.admin-columns{display:grid;grid-template-columns:minmax(250px,.8fr) minmax(0,1.5fr);gap:24px}.admin-card h2{margin:24px 0 16px}.admin-card h2:first-child{margin-top:0}.admin-card h3{margin-top:24px}.admin-card label{display:block;font-weight:600;margin:16px 0}.admin-card input,.admin-card select,.admin-card textarea{display:block;width:100%;box-sizing:border-box;margin-top:8px;padding:12px;border:1px solid #afc4c6;border-radius:8px;font:inherit;background:white;color:#163b40}.admin-card textarea{min-height:100px}.admin-card button{padding:11px 16px;border:0;border-radius:8px;background:#0b3a3f;color:white;font:inherit;cursor:pointer;margin:8px 8px 8px 0}.admin-card button:disabled{opacity:.5;cursor:default}.admin-card .record{display:block;width:100%;background:#f7f9f8;color:#163b40;text-align:left;border:1px solid transparent;padding:16px}.record span,.record small{display:block;margin-top:6px;overflow-wrap:anywhere}.admin-card .chosen{border-color:#0b3a3f;background:#e8f1ef}.admin-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}.admin-summary{padding:16px 0;border-bottom:1px solid #e2e9e8;overflow-wrap:anywhere}.admin-summary small{display:block;margin-top:8px}.admin-card a{color:#0b3a3f;text-decoration:underline}.admin-help{color:#587277;font-size:14px;line-height:1.6}.admin-card dl>div{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:8px 0}.admin-card dt{text-transform:capitalize;font-weight:600}.admin-card dd{margin:0;white-space:pre-wrap;overflow-wrap:anywhere}.admin-error,.admin-notice{padding:16px;border-radius:10px;margin-bottom:20px}.admin-error{background:#fbe8e4;color:#8e3023}.admin-notice{background:#e4f3e8}.admin-error button{margin-left:16px}.admin-card summary{cursor:pointer;padding:16px 0;font-weight:700}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #f5c452;outline-offset:3px}@media(max-width:850px){.admin-layout{grid-template-columns:1fr}.admin-layout nav{flex-direction:row;overflow:auto;border-right:0;border-bottom:1px solid #dbe5e4;padding:12px}.admin-layout main{padding:20px}.admin-columns{grid-template-columns:1fr}.admin-header{padding:16px;gap:12px;flex-wrap:wrap}.admin-header span{font-size:14px}.admin-row{grid-template-columns:1fr;gap:0}.admin-title h1{font-size:34px}.admin-card{padding:20px}}
+
+.admin-table-scroll{overflow-x:auto}.admin-applications-table{width:100%;border-collapse:collapse;text-align:left}.admin-applications-table th{padding:16px;background:#f0f5f4;font-size:14px}.admin-applications-table td{padding:20px 16px;border-bottom:1px solid #dbe5e4;vertical-align:top;overflow-wrap:anywhere}.admin-applications-table td:first-child a{font-weight:700;text-underline-offset:4px}.admin-applications-table tr:hover{background:#f7f9f8}.admin-status{display:inline-block;padding:5px 10px;border-radius:6px;background:#e8f1ef;white-space:nowrap}.admin-back{display:inline-block;color:#0b3a3f;margin-bottom:20px}.admin-applications-table{min-width:650px}
+
+.zelle-payment{display:inline-flex;align-items:center;gap:8px}.zelle-icon{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:6px;background:#6d1ed4;color:white;font-weight:800;font-size:22px;text-decoration:none}
+
+.invoice-line{padding:20px 0;border-bottom:1px solid #dce5e5;margin-bottom:20px}.invoice-line .admin-row{align-items:end}
+
+.invoice-history-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.admin-card a.admin-action-link{background:#0b3a3f;color:white;text-decoration:none;padding:12px 18px;border-radius:8px;font-weight:600}.invoice-history-table{width:100%;border-collapse:collapse;font-size:14px;min-width:800px}.invoice-history-table th,.invoice-history-table td{text-align:left;padding:14px;border-bottom:1px solid #c8d7d4;vertical-align:top}.invoice-history-table thead{background:#f2f6f5}.invoice-history-table td:nth-child(2),.invoice-history-table td:nth-child(3){white-space:nowrap}.invoice-history-table .invoice-paid{background:#e2f2e6}.invoice-history-table .invoice-pending{background:#fff3cf}.invoice-history-table .invoice-overdue{background:#fbe2e0}.invoice-history-table tfoot{background:#edf3f2;font-weight:700}.invoice-row-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px;min-width:180px}.invoice-row-actions button{font-size:13px;padding:8px 10px;margin:0}.invoice-history-table td:first-child{min-width:140px;overflow-wrap:anywhere}.admin-card .invoice-history-heading h2{margin:0}
+
+.family-accounts-table{min-width:780px}.family-accounts-table td{vertical-align:top;overflow-wrap:anywhere}.family-accounts-table td:last-child{white-space:nowrap}
+
+.account-editor{border-top:1px solid #dbe5e4;margin-top:24px;padding-top:16px}.account-editor-heading{display:flex;align-items:center;justify-content:space-between}.family-accounts-table select{min-width:140px;margin:0}.family-accounts-table td:nth-child(3),.family-accounts-table td:nth-child(4){white-space:nowrap}
+
+.family-accounts-table tfoot{background:#edf3f2;font-weight:700}.family-accounts-table tfoot th,.family-accounts-table tfoot td{border-top:2px solid #afc4c6}
+
+.admin-menu-toggle{display:none}.admin-shell{width:100%;box-sizing:border-box}.admin-table-scroll{max-width:100%}
+@media(max-width:850px){
+.admin-header{flex-wrap:nowrap;padding:12px;gap:12px}.admin-header img{width:56px;display:block}.admin-header span{font-size:18px;line-height:1.3}.admin-header>a:not(:first-of-type){font-size:16px}.admin-menu-toggle{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:44px;height:44px;border:1px solid #afc4c6;border-radius:8px;background:white;color:#163b40;font-size:26px;cursor:pointer}.admin-layout nav{display:none;overflow:visible;flex-direction:column;padding:12px;border-bottom:1px solid #dbe5e4}.admin-layout nav.admin-navigation-open{display:flex}.admin-layout nav button{min-height:48px;font-size:18px}.admin-layout main{padding:16px;min-width:0}.admin-card{padding:16px;font-size:16px;line-height:1.5}.admin-card input,.admin-card select,.admin-card textarea{font-size:16px;min-width:0}.admin-help{font-size:16px}.invoice-history-heading{justify-content:flex-end}.admin-action-link{display:inline-block;min-height:44px;box-sizing:border-box}.invoice-row-actions button{font-size:16px;min-height:44px}.admin-card dl>div{grid-template-columns:1fr}.admin-header{flex-wrap:wrap}.admin-header>a:nth-last-child(-n+2){margin-left:8px}.invoice-history-table{font-size:16px}
+}
+@media(max-width:600px){
+.invoice-history-table{display:block;min-width:0;width:100%}.invoice-history-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.invoice-history-table tbody,.invoice-history-table tfoot{display:block}.invoice-history-table tbody tr{display:block;margin-bottom:16px;border:1px solid #c8d7d4;border-radius:10px;overflow:hidden}.invoice-history-table tbody td{display:grid;grid-template-columns:88px minmax(0,1fr);gap:12px;min-width:0;padding:12px;border-bottom:1px solid #c8d7d4;white-space:normal}.invoice-history-table tbody td[data-label]::before{content:attr(data-label);font-weight:700}.invoice-history-table tbody td[colspan]{display:block}.invoice-history-table tbody td:last-child{border-bottom:0}.invoice-row-actions{min-width:0;flex-direction:column;align-items:flex-start}.invoice-history-table tfoot tr{display:flex;justify-content:space-between;align-items:center}.invoice-history-table tfoot th,.invoice-history-table tfoot td{padding:14px 10px;border:0}.invoice-history-table tfoot td:last-child{display:none}
+}
+
+.invoice-family-toolbar{display:flex;align-items:flex-end;gap:16px;margin-bottom:16px}.invoice-family-toolbar label{flex:1;min-width:0;margin:0}.invoice-family-toolbar .admin-action-link{flex-shrink:0;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;min-height:44px;box-sizing:border-box}@media(max-width:600px){.invoice-family-toolbar{flex-wrap:wrap}.invoice-family-toolbar label{flex-basis:100%}.invoice-family-toolbar .admin-action-link{margin-left:auto}}
+
+.staff-permissions{min-width:200px;max-width:320px}.admin-card .staff-permissions summary{border:1px solid #afc4c6;border-radius:8px;padding:12px;overflow-wrap:anywhere;min-height:44px;box-sizing:border-box}.staff-permissions fieldset{border:1px solid #dbe5e4;border-radius:8px;margin:8px 0;padding:8px 12px}.staff-permissions legend{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.admin-card .staff-permissions label{display:flex;align-items:center;gap:10px;font-weight:400;margin:0;min-height:44px}.admin-card .staff-permissions input[type=checkbox]{width:20px;height:20px;min-height:20px;margin:0;flex-shrink:0;accent-color:#0b3a3f}.admin-card .staff-permissions input[type=hidden]{display:none}
+
+.students-table{min-width:480px}.admin-card .student-name-link{display:inline;padding:0;margin:0;background:transparent;color:#0b3a3f;border-radius:0;text-align:left;text-decoration:underline;text-underline-offset:4px;font-weight:700;min-height:44px}.students-table .student-selected{background:#e8f1ef}
+
+.admin-card .student-days-form{margin:0;padding:0;border:0}.student-days-form fieldset{margin:0;padding:0;border:0}.student-days-form legend{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.student-days-options{display:flex;flex-wrap:wrap;gap:8px}.admin-card .student-days-options label{display:flex;align-items:center;gap:5px;min-height:44px;margin:0;font-weight:400}.admin-card .student-days-options input{width:20px;height:20px;min-height:20px;margin:0;accent-color:#0b3a3f}.admin-card .student-days-form button{margin-top:8px}
+
+.progress-note-actions{display:flex;flex-wrap:wrap;gap:12px}
+
+.admin-card .table-sort-button{background:transparent;color:inherit;padding:0;margin:0;border-radius:0;font-weight:700;text-align:left;min-height:44px}.table-sort-button:hover{text-decoration:underline}.table-sort-button span{white-space:nowrap}
+
+.assignment-library-card{max-width:none!important;width:100%}.assignment-library-table{min-width:760px;table-layout:fixed}.assignment-library-table th:first-child{width:100px}.assignment-library-table td{vertical-align:top}.assignment-library-table input,.assignment-library-table textarea{width:100%;min-width:0}.assignment-library-table td:first-child button{margin-top:12px}.assignment-library-table input[type=file]{font-size:14px}.assignment-library-table td:nth-child(3) button{padding:2px 8px;margin-left:6px}
+
+.admin-card .library-student-option{display:flex;align-items:center;gap:8px;font-weight:400;margin:0;min-height:44px}.admin-card .library-student-option input{width:20px;height:20px;min-height:20px;margin:0;flex-shrink:0;accent-color:#0b3a3f}
+
+.library-add-assignment{margin-bottom:16px}
+
+.assignment-library-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.assignment-library-heading h2{margin:0}
+.assignment-library-actions{display:flex;gap:12px;flex-wrap:wrap}
+.assignment-library-actions button{white-space:nowrap;margin:0}
+
+.admin-card .student-detail-fields>.student-age-pod{grid-template-columns:max-content max-content max-content minmax(0,1fr);align-items:center;gap:12px}
+.student-age-pod dt:nth-of-type(2){margin-left:16px}
+.admin-card .student-age-pod input{margin-top:0}
+.admin-card .student-days-options label{position:relative;display:inline-flex;min-height:44px;width:44px;height:44px;cursor:pointer}
+.admin-card .student-days-options input{appearance:none;-webkit-appearance:none;width:44px;height:44px;min-height:44px;padding:0;margin:0;border:1px solid #afc4c6;border-radius:8px;background:white;cursor:pointer}
+.admin-card .student-days-options input:checked{background:#0b3a3f;border-color:#0b3a3f}
+.student-days-options label span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;font-weight:600;color:#163b40}
+.student-days-options input:checked+span{color:white}
+.student-days-options input:disabled{opacity:.5;cursor:default}
+.student-days-options input:disabled+span{opacity:.5}
+
+.admin-menu-toggle{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:44px;height:44px;border:1px solid #afc4c6;border-radius:8px;background:white;color:#163b40;font-size:26px;cursor:pointer}
+@media(min-width:851px){.admin-layout.admin-menu-collapsed{grid-template-columns:minmax(0,1fr)}.admin-layout.admin-menu-collapsed nav{display:none}}
+.admin-card .invoice-family-toolbar{justify-content:flex-start;align-items:flex-end;flex-wrap:wrap}
+.admin-card .invoice-family-toolbar label{flex:0 1 320px;width:320px;max-width:100%;margin:0}
+.admin-card .invoice-family-toolbar .admin-action-link{flex-shrink:0}
+
+.admin-layout{position:relative}
+.admin-drawer-toggle{position:absolute;top:20px;left:186px;z-index:6;width:24px;height:48px;border:1px solid #afc4c6;border-radius:0 8px 8px 0;background:white;color:#0b3a3f;font-size:28px;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.admin-menu-collapsed .admin-drawer-toggle{left:0}
+@media(min-width:851px){.admin-layout.admin-menu-collapsed{grid-template-columns:24px minmax(0,1fr)}.admin-layout main{grid-column:2}}
+@media(max-width:850px){.admin-layout nav.admin-navigation-open{position:absolute;top:0;left:0;width:210px;box-sizing:border-box;background:white;z-index:5;border-right:1px solid #dbe5e4;box-shadow:4px 0 12px #163b4014}.admin-layout main{padding-left:36px}}
+
+.admin-drawer-toggle{top:50%;transform:translateY(-50%)}
+
+.admin-nav-icon{width:24px;height:24px;flex-shrink:0}
+.admin-layout nav button{display:flex;align-items:center;gap:12px}
+.admin-layout.admin-menu-collapsed{grid-template-columns:64px minmax(0,1fr)}
+.admin-layout.admin-menu-collapsed nav{display:flex;position:static;width:64px;box-sizing:border-box;padding:24px 8px;border-right:1px solid #dbe5e4;border-bottom:0;box-shadow:none}
+.admin-menu-collapsed .admin-nav-label{display:none}
+.admin-layout.admin-menu-collapsed nav button{justify-content:center;padding:12px 10px;min-height:48px}
+.admin-menu-collapsed .admin-drawer-toggle{left:64px}
+@media(max-width:850px){.admin-layout{grid-template-columns:64px minmax(0,1fr)}.admin-layout main{grid-column:2;padding-left:16px}}
+
+.staff-identity-fields{max-width:460px}
+.admin-card .staff-identity-fields label{margin:12px 0}
+.staff-identity-fields input[readonly]{background:#f7f9f8}
+
+.admin-card .assignment-library-table input,.admin-card .assignment-library-table textarea{height:46px;min-height:46px;line-height:20px}
+.admin-card .assignment-library-table textarea{resize:vertical}
+
+.staff-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+.admin-card .staff-heading h2{margin:0}
+.admin-card .staff-heading button{margin:0;white-space:nowrap}
+
+.staff-stacked-editor{max-width:460px}
+.staff-stacked-editor .staff-permissions{max-width:none;min-width:0;margin-top:16px}
+
+.staff-stacked-editor{max-width:720px}
+.staff-stacked-editor .staff-identity-fields{max-width:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+.staff-stacked-editor .staff-identity-fields label{min-width:0}
+@media(max-width:600px){.staff-stacked-editor .staff-identity-fields{grid-template-columns:minmax(0,1fr);gap:0}}
+
+.admin-card.staff-admin-card{width:550px;max-width:100%;box-sizing:border-box}
+
+.admin-layout main{width:100%;max-width:none;margin:0;box-sizing:border-box}
+.admin-card.invoice-create-card{width:100%;max-width:1200px;margin-inline:auto;box-sizing:border-box}
+.admin-card.staff-admin-card{margin-inline:auto}
+.admin-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+.admin-row>label{min-width:0}
+@media(max-width:850px){.admin-row{grid-template-columns:minmax(0,1fr)}}

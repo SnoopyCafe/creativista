@@ -1,0 +1,4 @@
+import {identity,owned,checked,fail,HttpError} from '../../../../lib/server';
+import {invoicePdf} from '../../../../lib/invoice-pdf';
+export const runtime='nodejs';
+export async function GET(request:Request){try{const user=await identity(),id=new URL(request.url).searchParams.get('id');if(!id)throw new HttpError(400,'Choose an invoice.');const invoice=await checked(await user.client.from('invoices').select('*').eq('id',id).maybeSingle());if(!invoice)throw new HttpError(404,'Invoice not found.');const family=await owned(invoice.application_id,user),pdf=await invoicePdf(invoice,family);return new Response(new Uint8Array(pdf),{headers:{'Content-Type':'application/pdf','Content-Disposition':`attachment; filename="invoice-${invoice.id.slice(0,8)}.pdf"`,'Cache-Control':'private, no-store'}});}catch(e){return fail(e);}}
