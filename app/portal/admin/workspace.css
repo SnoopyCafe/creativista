@@ -135,3 +135,5 @@
 .staff-table input{margin:0;min-width:0}
 .staff-grid-editor .staff-permissions{margin-top:0}
 @media(max-width:700px){.staff-grid-editor{grid-template-columns:minmax(0,1fr)}.staff-actions{width:100%}}
+
+.staff-table tbody tr{cursor:pointer}.staff-table tbody tr:focus-visible{outline:3px solid #f5c452;outline-offset:-3px}.staff-table td>span{text-decoration:none}
