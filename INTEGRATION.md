@@ -1,6 +1,6 @@
 # Public website and portal integration
 
-Branch: feat/portal-integration. The public domain has not been changed.
+Combined production project: creativista-integrated on Vercel. The public domain now points to Vercel; DNS caches may still serve the previous Hostinger site during propagation. Hostinger Git auto-deployment is disabled, retaining the old website and PHP tracking files for rollback. Supabase Site URL is https://creativistapods.com/portal and production callbacks are allowlisted. The user verified the production SMTP connection. No real invoice or invitation was sent as a test.
 
 ## Routes
 - /: original public homepage, with Portal in desktop and mobile menus.
@@ -21,3 +21,6 @@ The existing Supabase project remains the data source. No data migration or perm
 6. Publish only after preview approval. Add old portal-domain redirects with path and query preservation (/ to /portal, /login to /portal/login, /admin/* to /portal/admin/*, /auth/* to /portal/auth/*). Keep previous hosting deployments and DNS values for rollback.
 
 The public HTML documents are served as full HTML responses, preserving their CSS, scripts, SEO metadata, video, and booking behavior. Portal CSS is loaded only by portal routes. Runtime secrets and build output are excluded from Git.
+
+## Rollback
+Restore root ALIAS @ to creativistapods.com.cdn.hstgr.net and www CNAME to www.creativistapods.com.cdn.hstgr.net (TTL 300) to return to the retained Hostinger site. Keep mail records and tracking ALIAS unchanged. Restore Supabase Site URL to https://creativista-portal.vercel.app if returning to the standalone portal. Prior Vercel deployments remain available.
