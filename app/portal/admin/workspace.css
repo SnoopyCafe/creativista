@@ -119,3 +119,15 @@
 .admin-menu-collapsed .admin-nav-label{display:none}
 .admin-layout.admin-menu-collapsed nav button{min-height:48px}
 .admin-menu-collapsed .admin-drawer-toggle{left:64px}
+
+.admin-card.staff-admin-card{width:100%;max-width:1200px}
+.staff-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.staff-grid-editor{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(220px,1fr);gap:24px;align-items:start}
+.staff-table{min-width:0;table-layout:fixed}
+.staff-table th:first-child{width:38%}
+.staff-table td{overflow-wrap:anywhere}
+.admin-card .staff-name-button{padding:0;margin:0;background:transparent;color:#0b3a3f;text-decoration:underline;text-align:left;font-weight:700}
+.staff-selected{background:#e8f1ef}
+.staff-table input{margin:0;min-width:0}
+.staff-grid-editor .staff-permissions{margin-top:0}
+@media(max-width:700px){.staff-grid-editor{grid-template-columns:minmax(0,1fr)}.staff-actions{width:100%}}
