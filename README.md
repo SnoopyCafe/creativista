@@ -34,3 +34,10 @@ vercel deploy
 ```
 
 No build command is required.
+
+## Integrated portal branch
+
+This branch now runs the public website and portal in one Next.js application.
+Run npm install, then npm run dev. Run npm run build and node tools/check.mjs
+before publishing. See INTEGRATION.md for route mapping, preview configuration,
+tracking requirements, and production cutover steps.

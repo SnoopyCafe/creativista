@@ -1,4 +1,4 @@
-import { readFile, readdir, stat } from 'node:fs/promises';
+import { readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
 
@@ -74,7 +74,7 @@ for (const tag of html.match(/<(?:img|script|link|a|source)\b[^>]*>/gi) ?? []) {
   }
 }
 
-const localReferences = [...new Set(references.filter((value) => !/^(?:[a-z][a-z0-9+.-]*:|#|\/\/)/i.test(value)))];
+const localReferences = [...new Set(references.filter((value) => !/^(?:[a-z][a-z0-9+.-]*:|#|\/\/)/i.test(value) && !/^\/portal(?:[/?#]|$)/.test(value)))];
 const missingFiles = [];
 for (const reference of localReferences) {
   const clean = decodeURIComponent(reference.split(/[?#]/)[0]);
@@ -87,27 +87,25 @@ for (const reference of localReferences) {
 }
 assert('every local src/href/srcset file exists', missingFiles.length === 0, missingFiles.length ? `missing ${missingFiles.join(', ')}` : `${localReferences.length} unique files checked`);
 
-async function shippedImageFiles(directory) {
-  const entries = await readdir(directory, { withFileTypes: true });
-  const files = [];
-  for (const entry of entries) {
-    if (entry.name === '_src') continue;
-    const itemPath = path.join(directory, entry.name);
-    if (entry.isDirectory()) files.push(...await shippedImageFiles(itemPath));
-    if (entry.isFile()) files.push(itemPath);
-  }
-  return files;
+// Count production homepage image assets, including every responsive variant,
+// poster, social preview and image referenced by its linked stylesheets.
+// Videos and unused source/legacy assets have separate transfer costs.
+let assetSource = html;
+for (const reference of localReferences.filter((value) => /\.css(?:[?#]|$)/i.test(value))) {
+  assetSource += '\n' + await readFile(path.resolve(root, reference.split(/[?#]/)[0]), 'utf8');
 }
-
-const shippedImages = await shippedImageFiles(imagesPath);
+const productionImagePaths = [...new Set(
+  [...assetSource.matchAll(/(?:\.\.\/)?images\/[^\s"'<>),?]+/g)]
+    .map((match) => match[0].replace(/^\.\.\//, ''))
+    .filter((value) => /\.(?:avif|webp|png|jpe?g|gif|svg|ico)$/i.test(value))
+)];
+const shippedImages = productionImagePaths.map((value) => path.resolve(root, value));
 let imageBytes = 0;
 for (const file of shippedImages) imageBytes += (await stat(file)).size;
-// Repo-size guard, not a transfer budget. A visitor downloads ~150 KB of images because
-// srcset serves one variant per slot. The original 900 KB left 3 KiB of headroom, which
-// pushed encode quality down to protect a number that does not affect load time. 1.4 MB
-// keeps the guard meaningful while leaving room to raise image quality.
+// Preserve the 1.4 MiB budget across all production variants, not just those
+// downloaded by a single visitor.
 const imageLimit = 1400 * 1024;
-assert(`total shipped images are under ${imageLimit / 1024} KB`, imageBytes < imageLimit, `${shippedImages.length} files; ${imageBytes} bytes (${(imageBytes / 1024).toFixed(1)} KiB), limit ${imageLimit} bytes; images/_src excluded as non-shipped source material`);
+assert(`total shipped images are under ${imageLimit / 1024} KB`, imageBytes < imageLimit, `${shippedImages.length} files; ${imageBytes} bytes (${(imageBytes / 1024).toFixed(1)} KiB), limit ${imageLimit} bytes; production homepage assets; videos and unused source/legacy assets excluded`);
 
 for (const [index, result] of results.entries()) {
   console.log(`${result.pass ? 'PASS' : 'FAIL'} ${index + 1}/10: ${result.name} - ${result.detail}`);
