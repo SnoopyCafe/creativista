@@ -15,3 +15,10 @@ old/
 # Referrer capture logs are generated at runtime and may contain visitor data.
 ref/data/*.csv
 ref/data/*.log
+
+# Next.js runtime/build artifacts and secrets
+.env*
+!.env.example
+.next/
+node_modules
+*.tsbuildinfo

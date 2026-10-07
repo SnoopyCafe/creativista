@@ -1,0 +1,11 @@
+.git
+.next
+node_modules
+.env*
+/reference/
+/ref/
+/images/
+/css/
+/old/
+/*.sql
+/index2.html
