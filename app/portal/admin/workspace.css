@@ -91,15 +91,19 @@
 .admin-card .staff-heading h2{margin:0}
 .admin-card .staff-heading button{margin:0;white-space:nowrap}
 
-.staff-stacked-editor{max-width:460px}
-.staff-stacked-editor .staff-permissions{max-width:none;min-width:0;margin-top:16px}
+.staff-layout{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(260px,1fr);gap:24px;align-items:start}
+.staff-table{min-width:0}
+.staff-table tr[aria-selected=true]{background:#e6f0ef}
+.staff-table tr[aria-selected=true] td:first-child{border-left:3px solid #0b3a3f}
+.admin-card .staff-row-button{background:transparent;border:0;border-radius:0;color:inherit;font-weight:700;text-align:left;text-decoration:underline;text-underline-offset:4px;min-height:44px;padding:0;margin:0}
+.staff-editor-panel h3{margin-top:0}
+.staff-editor-panel .staff-identity-fields{max-width:none}
+.staff-editor-panel .staff-permissions{max-width:none;min-width:0;margin-top:16px}
+.staff-editor-panel form{display:flex;flex-wrap:wrap;gap:8px}
+.staff-editor-panel form button{margin:0}
+@media(max-width:850px){.staff-layout{grid-template-columns:minmax(0,1fr)}}
 
-.staff-stacked-editor{max-width:720px}
-.staff-stacked-editor .staff-identity-fields{max-width:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
-.staff-stacked-editor .staff-identity-fields label{min-width:0}
-@media(max-width:600px){.staff-stacked-editor .staff-identity-fields{grid-template-columns:minmax(0,1fr);gap:0}}
-
-.admin-card.staff-admin-card{width:550px;max-width:100%;box-sizing:border-box}
+.admin-card.staff-admin-card{width:100%;max-width:1100px;box-sizing:border-box}
 
 .admin-layout main{width:100%;max-width:none;margin:0;box-sizing:border-box}
 .admin-card.invoice-create-card{width:100%;max-width:1200px;margin-inline:auto;box-sizing:border-box}
