@@ -71,13 +71,14 @@
 .admin-drawer-toggle{top:50%;transform:translateY(-50%)}
 
 .admin-nav-icon{width:24px;height:24px;flex-shrink:0}
-.admin-layout nav button{display:flex;align-items:center;gap:12px}
-.admin-layout.admin-menu-collapsed{grid-template-columns:64px minmax(0,1fr)}
-.admin-layout.admin-menu-collapsed nav{display:flex;position:static;width:64px;box-sizing:border-box;padding:24px 8px;border-right:1px solid #dbe5e4;border-bottom:0;box-shadow:none}
-.admin-menu-collapsed .admin-nav-label{display:none}
-.admin-layout.admin-menu-collapsed nav button{justify-content:center;padding:12px 10px;min-height:48px}
-.admin-menu-collapsed .admin-drawer-toggle{left:64px}
-@media(max-width:850px){.admin-layout{grid-template-columns:64px minmax(0,1fr)}.admin-layout main{grid-column:2;padding-left:16px}}
+.admin-layout nav button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;text-align:center}
+.admin-nav-label{display:block;font-size:14px;line-height:1.25;overflow-wrap:anywhere}
+.admin-layout.admin-menu-collapsed{grid-template-columns:104px minmax(0,1fr)}
+.admin-layout.admin-menu-collapsed nav{display:flex;position:static;width:104px;box-sizing:border-box;padding:24px 8px;border-right:1px solid #dbe5e4;border-bottom:0;box-shadow:none}
+.admin-menu-collapsed .admin-nav-label{display:block;font-size:12px}
+.admin-layout.admin-menu-collapsed nav button{justify-content:center;padding:12px 4px;min-height:72px}
+.admin-menu-collapsed .admin-drawer-toggle{left:104px}
+@media(max-width:850px){.admin-layout{grid-template-columns:104px minmax(0,1fr)}.admin-layout main{grid-column:2;padding-left:16px}}
 
 .staff-identity-fields{max-width:460px}
 .admin-card .staff-identity-fields label{margin:12px 0}
@@ -106,3 +107,15 @@
 .admin-row{grid-template-columns:repeat(2,minmax(0,1fr))}
 .admin-row>label{min-width:0}
 @media(max-width:850px){.admin-row{grid-template-columns:minmax(0,1fr)}}
+
+/* Expanded: icon and label. Collapsed: icon only. */
+.admin-layout{grid-template-columns:104px minmax(0,1fr)}
+.admin-layout nav,.admin-layout nav.admin-navigation-open{position:static;width:104px;padding:24px 8px;box-sizing:border-box;background:transparent;box-shadow:none;border-right:1px solid #dbe5e4;border-bottom:0;display:flex}
+.admin-layout nav button{padding:12px 4px;min-height:72px}
+.admin-nav-label{font-size:12px}
+.admin-drawer-toggle{left:104px}
+.admin-layout.admin-menu-collapsed{grid-template-columns:64px minmax(0,1fr)}
+.admin-layout.admin-menu-collapsed nav{width:64px}
+.admin-menu-collapsed .admin-nav-label{display:none}
+.admin-layout.admin-menu-collapsed nav button{min-height:48px}
+.admin-menu-collapsed .admin-drawer-toggle{left:64px}

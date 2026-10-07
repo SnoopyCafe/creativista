@@ -7,3 +7,18 @@
 .invoice-table-wrap{overflow-x:auto}.invoice-table{width:100%;border-collapse:collapse;text-align:left}.invoice-table th,.invoice-table td{padding:16px;border-bottom:1px solid #dce5e5}.invoice-table th{color:#567378;font-size:14px}.invoice-table td{vertical-align:middle}.invoice-table th:nth-child(2),.invoice-table td:nth-child(2){white-space:nowrap}
 
 .invoice-table tbody tr.invoice-paid{background:#e2f2e6}.invoice-table tbody tr.invoice-pending{background:#fff3cf}.invoice-table tbody tr.invoice-overdue{background:#fbe2e0}
+
+.family-shell{position:relative;display:grid;grid-template-columns:104px minmax(0,1fr)}
+.family-shell .sidebar{display:flex;position:sticky;top:0;height:100dvh;width:104px;padding:20px 8px;box-shadow:none;z-index:2;overflow-y:auto}
+.family-shell .brand{justify-content:center;margin-bottom:24px}
+.family-shell .brand img{width:56px;height:54px}
+.family-shell .brand div{display:none}
+.family-shell .nav-item{flex-direction:column;justify-content:center;gap:7px;padding:12px 4px;min-height:72px;text-align:center;text-decoration:none}
+.family-nav-label{display:block;font-size:12px;line-height:1.25;overflow-wrap:anywhere}
+.family-drawer-toggle{position:absolute;top:50vh;transform:translateY(-50%);left:104px;z-index:6;width:24px;height:48px;border:1px solid #afc4c6;border-radius:0 8px 8px 0;background:white;color:var(--teal);font-size:28px;padding:0;display:grid;place-items:center}
+.family-shell.family-menu-collapsed{grid-template-columns:64px minmax(0,1fr)}
+.family-menu-collapsed .sidebar{width:64px}
+.family-menu-collapsed .family-nav-label{display:none}
+.family-menu-collapsed .nav-item{min-height:48px}
+.family-menu-collapsed .family-drawer-toggle{left:64px}
+.family-shell .mobile-toggle{display:none}
