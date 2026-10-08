@@ -214,3 +214,7 @@
 .student-assignment-grid th:last-child{width:78px}
 .admin-card .student-assignment-grid input[type=date]{width:100%;min-width:0;box-sizing:border-box;padding:8px 4px;font-size:13px}
 @media(max-width:600px){.student-assignment-grid th,.student-assignment-grid td{padding:10px 4px;font-size:12px}.student-assignment-grid th:first-child{width:20%}.student-assignment-grid th:nth-child(3){width:64px}.student-assignment-grid th:nth-child(4){width:100px}.student-assignment-grid th:last-child{width:60px}}
+
+.student-assignment-grid th:nth-child(3),.student-assignment-grid th:nth-child(4){width:126px}
+.student-assignment-grid th:first-child{width:21%}
+@media(max-width:600px){.student-assignment-grid th:nth-child(3),.student-assignment-grid th:nth-child(4){width:100px}}
