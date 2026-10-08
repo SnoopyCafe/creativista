@@ -172,3 +172,10 @@
 .admin-card .student-detail-fields>.student-pod{display:grid;grid-template-columns:max-content minmax(0,1fr);align-items:center;gap:16px}
 .admin-card .student-pod input{margin-top:0}
 @media(max-width:600px){.student-profile-heading{flex-wrap:wrap;gap:24px}.student-profile-heading dl{gap:24px}}
+
+.admin-card .student-detail-fields{display:flex;flex-wrap:wrap;align-items:flex-start;gap:32px}
+.admin-card .student-detail-fields>.student-pod{display:block;flex:0 0 160px}
+.admin-card .student-pod dt{margin-bottom:12px}
+.admin-card .student-pod dd{margin:0}
+.admin-card .student-detail-fields>div:not(.student-pod){display:block;flex:1 1 280px}
+@media(max-width:600px){.admin-card .student-detail-fields{gap:20px}}
