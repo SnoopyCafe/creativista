@@ -179,3 +179,5 @@
 .admin-card .student-pod dd{margin:0}
 .admin-card .student-detail-fields>div:not(.student-pod){display:block;flex:1 1 280px}
 @media(max-width:600px){.admin-card .student-detail-fields{gap:20px}}
+
+.admin-card .student-profile-heading dl>div{display:block;padding:0}
