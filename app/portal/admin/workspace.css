@@ -190,3 +190,7 @@
 .student-assignment-grid th:nth-child(3){width:115px}
 .student-assignment-grid th:nth-child(4){width:150px}
 .admin-card .student-assignment-grid input[type=date]{font-size:14px;margin:0;min-height:40px;padding:8px;border-radius:6px}
+
+.student-progress-grid{min-width:720px;font-size:14px;line-height:1.5}
+.student-progress-grid td:first-child{white-space:nowrap}
+.student-progress-grid .progress-observations{min-width:220px;white-space:pre-wrap;overflow-wrap:anywhere}
