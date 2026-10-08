@@ -27,3 +27,14 @@
 #family-navigation button[title="Assignments"] .family-nav-label{white-space:nowrap}
 .family-nav-icon{position:relative;display:inline-flex;line-height:1}
 .assignment-counter{position:absolute;top:-9px;right:-12px;min-width:20px;height:20px;padding:0 4px;border-radius:50%;display:grid;place-items:center;background:var(--amber);color:var(--teal);font-size:11px;font-weight:700;line-height:1;box-shadow:0 0 0 2px var(--paper)}
+
+.family-assignment-scroll{overflow-x:auto}
+.family-assignment-grid{width:100%;min-width:720px;border-collapse:collapse;text-align:left;font-size:14px;line-height:1.5}
+.family-assignment-grid th{padding:14px 16px;background:#f0f5f4;color:#163b40;font-weight:600;white-space:nowrap}
+.family-assignment-grid td{padding:18px 16px;border-bottom:1px solid #dbe5e4;vertical-align:top}
+.family-assignment-grid td:first-child{min-width:220px;max-width:400px;overflow-wrap:anywhere}
+.family-assignment-grid td p{margin:6px 0 0;white-space:pre-wrap;color:#48686d}
+.assignment-attachment{display:block;margin-top:8px;text-underline-offset:3px}
+.assignment-status{display:inline-block;padding:4px 8px;border-radius:6px;background:#f0f5f4;white-space:nowrap;font-size:12px;font-weight:600}
+.assignment-status.is-completed{background:#e0eee7;color:#1a584a}
+.assignment-status.is-pending{background:#fff0c7;color:#59451a}

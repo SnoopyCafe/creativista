@@ -180,9 +180,13 @@
 .admin-card .student-detail-fields .student-days-options label span{font-size:14px}
 @media(max-width:600px){.admin-card .student-profile-heading{grid-template-columns:minmax(0,1fr);gap:20px}.admin-card .student-profile-heading dl{grid-template-columns:80px minmax(0,1fr);gap:24px}.admin-card .student-detail-fields{grid-template-columns:minmax(0,1fr);gap:20px}.admin-card .student-pod{max-width:160px}}
 
-.student-assignment-grid{min-width:480px;margin-top:20px;table-layout:fixed}
+.student-assignment-grid{min-width:760px;margin-top:20px;table-layout:fixed}
 .student-assignment-grid th:last-child{width:100px;text-align:center}
 .student-assignment-grid td:last-child{text-align:center;vertical-align:middle}
 .admin-card .student-assignment-grid input[type=checkbox]{width:20px;height:20px;min-height:20px;margin:0;padding:0;accent-color:#0b3a3f;cursor:pointer}
 .student-assignment-grid td{font-size:14px;line-height:1.5}
 .student-assignment-grid td p{margin:8px 0 0}
+
+.student-assignment-grid th:nth-child(3){width:115px}
+.student-assignment-grid th:nth-child(4){width:150px}
+.admin-card .student-assignment-grid input[type=date]{font-size:14px;margin:0;min-height:40px;padding:8px;border-radius:6px}
