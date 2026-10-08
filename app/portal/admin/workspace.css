@@ -163,21 +163,19 @@
 .dashboard-leads td{vertical-align:top;overflow-wrap:anywhere}
 .dashboard-leads td p{margin:8px 0 0;font-size:14px}
 
-.student-profile-heading{display:flex;align-items:flex-start;gap:40px;margin:24px 0}
-.student-profile-heading h2{margin:0 0 12px}
-.student-profile-heading p{margin:0}
-.student-profile-heading dl{display:flex;gap:40px;margin:0}
-.student-profile-heading dt{font-weight:700;margin-bottom:12px}
-.student-profile-heading dd{margin:0}
-.admin-card .student-detail-fields>.student-pod{display:grid;grid-template-columns:max-content minmax(0,1fr);align-items:center;gap:16px}
-.admin-card .student-pod input{margin-top:0}
-@media(max-width:600px){.student-profile-heading{flex-wrap:wrap;gap:24px}.student-profile-heading dl{gap:24px}}
-
-.admin-card .student-detail-fields{display:flex;flex-wrap:wrap;align-items:flex-start;gap:32px}
-.admin-card .student-detail-fields>.student-pod{display:block;flex:0 0 160px}
-.admin-card .student-pod dt{margin-bottom:12px}
-.admin-card .student-pod dd{margin:0}
-.admin-card .student-detail-fields>div:not(.student-pod){display:block;flex:1 1 280px}
-@media(max-width:600px){.admin-card .student-detail-fields{gap:20px}}
-
-.admin-card .student-profile-heading dl>div{display:block;padding:0}
+/* Student profile: aligned identity and schedule fields. */
+.admin-card .student-profile-heading{display:grid;grid-template-columns:minmax(160px,1fr) minmax(0,2fr);gap:32px;align-items:start;margin:12px 0 28px}
+.admin-card .student-profile-heading h2{font-size:26px;line-height:32px;margin:0 0 8px;letter-spacing:-.02em}
+.admin-card .student-profile-heading p{font-size:15px;line-height:24px;margin:0;color:#48686d}
+.admin-card .student-profile-heading dl{display:grid;grid-template-columns:80px minmax(0,1fr);gap:32px;margin:0}
+.admin-card .student-profile-heading dl>div{display:block;padding:0;min-width:0}
+.admin-card .student-profile-heading dt,.admin-card .student-detail-fields dt{font-size:14px;line-height:20px;font-weight:600;margin:0 0 8px;color:#48686d}
+.admin-card .student-profile-heading dt{line-height:32px}
+.admin-card .student-profile-heading dd{font-size:16px;line-height:24px;margin:0;overflow-wrap:anywhere}
+.admin-card .student-detail-fields{display:grid;grid-template-columns:160px minmax(0,1fr);gap:32px;margin:0 0 24px;padding-bottom:24px;border-bottom:1px solid #dbe5e4}
+.admin-card .student-detail-fields>div{display:block;padding:0;min-width:0}
+.admin-card .student-detail-fields dd{margin:0}
+.admin-card .student-pod input{height:44px;min-height:44px;box-sizing:border-box;margin:0;padding:10px 12px;font-size:16px;line-height:22px;border-radius:8px}
+.admin-card .student-detail-fields .student-days-options{gap:8px}
+.admin-card .student-detail-fields .student-days-options label span{font-size:14px}
+@media(max-width:600px){.admin-card .student-profile-heading{grid-template-columns:minmax(0,1fr);gap:20px}.admin-card .student-profile-heading dl{grid-template-columns:80px minmax(0,1fr);gap:24px}.admin-card .student-detail-fields{grid-template-columns:minmax(0,1fr);gap:20px}.admin-card .student-pod{max-width:160px}}
