@@ -220,3 +220,10 @@
 @media(max-width:600px){.student-assignment-grid th:nth-child(3),.student-assignment-grid th:nth-child(4){width:100px}}
 
 .student-assignment-grid th:last-child{width:88px;white-space:nowrap;overflow-wrap:normal}
+
+.staff-grid-editor{grid-template-columns:minmax(0,1.8fr) minmax(220px,1fr)}
+.staff-table th:first-child{width:25%}
+.staff-table th:last-child{width:100px}
+.staff-table th,.staff-table td{padding:16px 10px}
+.staff-table td:last-child{font-size:13px;white-space:nowrap}
+@media(max-width:850px){.staff-grid-editor{grid-template-columns:minmax(0,1fr)}}
