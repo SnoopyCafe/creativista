@@ -223,7 +223,9 @@
 
 .staff-grid-editor{grid-template-columns:minmax(0,1.8fr) minmax(220px,1fr)}
 .staff-table th:first-child{width:25%}
-.staff-table th:last-child{width:100px}
+.staff-table th:nth-last-child(2){width:100px}
+.staff-table th:last-child{width:116px}
 .staff-table th,.staff-table td{padding:16px 10px}
-.staff-table td:last-child{font-size:13px;white-space:nowrap}
+.staff-table td:nth-last-child(2){font-size:13px;white-space:nowrap}
+.staff-table td:last-child select{min-width:104px;margin:0;padding:9px 28px 9px 10px}
 @media(max-width:850px){.staff-grid-editor{grid-template-columns:minmax(0,1fr)}}
