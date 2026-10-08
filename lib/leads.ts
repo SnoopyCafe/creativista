@@ -2,8 +2,9 @@ import {ImapFlow} from 'imapflow';
 import {simpleParser} from 'mailparser';
 const mailbox='admin@creativistapods.com';
 export type Lead={id:string;name:string;email:string;subject:string;received:string|null;preview:string};
+export function excludedLeadSender(address:string){const sender=address.trim().toLowerCase();return sender==='info@creativistacharm.com'||/@(creativistapods\.com|creativistacharm\.com)$/.test(sender);}
 export function potentialLead(subject:string,text:string,sender=''){
- if(/@(creativistapods\.com|creativistacharm\.com)$/i.test(sender))return false;
+ if(excludedLeadSender(sender))return false;
  if(/\b(newsletter|unsubscribe|delivery failure|undeliverable|password reset|verification code|invoice|payment|dismissal|pick.?up|official offer|educator|zoom link|funding|credit|loan|diploma|marketing)\b/i.test(subject))return false;
  // Ignore quoted history, which often contains program words unrelated to the new message.
  const message=text.split(/(?:On .{5,200} wrote:|From:|_{5,}|Begin forwarded message:)/i)[0];
@@ -21,6 +22,7 @@ export async function scanUnreadLeads(){
  try{await client.connect();const lock=await client.getMailboxLock('INBOX',{readOnly:true});try{
  const unread=await client.search({seen:false},{uid:true});const uids=unread||[];const selected=uids.slice(-200);const leads:Lead[]=[];
  if(selected.length){for await(const message of client.fetch(selected,{envelope:true,source:{maxLength:65536}},{uid:true})){
+ if([...(message.envelope?.from||[]),...(message.envelope?.sender||[])].some(sender=>excludedLeadSender(sender.address||'')))continue;
  const parsed=await simpleParser(message.source||Buffer.alloc(0),{skipHtmlToText:false,skipTextToHtml:true});const subject=message.envelope?.subject||'(No subject)';const text=(parsed.text||'').replace(/\s+/g,' ').trim();const sender=message.envelope?.from?.[0];
  if(sender?.address&&potentialLead(subject,text,sender.address))leads.push({id:String(message.uid),name:sender.name||sender.address,email:sender.address,subject,received:message.envelope?.date?new Date(message.envelope.date).toISOString():null,preview:text.slice(0,300)});
  }}return {leads:leads.reverse(),unread:uids.length,scanned:selected.length,checkedAt:new Date().toISOString()};
