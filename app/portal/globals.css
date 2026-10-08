@@ -22,3 +22,8 @@
 .family-menu-collapsed .nav-item{min-height:48px}
 .family-menu-collapsed .family-drawer-toggle{left:64px}
 .family-shell .mobile-toggle{display:none}
+
+.family-nav-label{overflow-wrap:normal;word-break:normal}
+#family-navigation button[title="Assignments"] .family-nav-label{white-space:nowrap}
+.family-nav-icon{position:relative;display:inline-flex;line-height:1}
+.assignment-counter{position:absolute;top:-9px;right:-12px;min-width:20px;height:20px;padding:0 4px;border-radius:50%;display:grid;place-items:center;background:var(--amber);color:var(--teal);font-size:11px;font-weight:700;line-height:1;box-shadow:0 0 0 2px var(--paper)}
