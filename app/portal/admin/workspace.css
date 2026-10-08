@@ -194,3 +194,12 @@
 .student-progress-grid{min-width:720px;font-size:14px;line-height:1.5}
 .student-progress-grid td:first-child{white-space:nowrap}
 .student-progress-grid .progress-observations{min-width:220px;white-space:pre-wrap;overflow-wrap:anywhere}
+
+.student-detail-section{border:1px solid #dbe5e4;border-radius:12px;padding:24px;margin:0 0 24px}
+.admin-card .student-detail-section>h3{font-size:20px;line-height:28px;margin:0 0 20px}
+.admin-card .student-detail-section .student-detail-fields{border:0;padding-bottom:0;margin-bottom:0}
+.admin-card .student-detail-section .student-profile-heading{margin-top:0}
+.student-detail-section .student-assignment-picker{margin:0}
+.student-detail-section .student-progress-editor{border:0;padding:0;margin:0 0 20px}
+.student-detail-section:last-child{margin-bottom:0}
+@media(max-width:600px){.student-detail-section{padding:16px}}
