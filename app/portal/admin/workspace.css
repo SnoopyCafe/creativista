@@ -138,4 +138,16 @@
 
 .staff-table tbody tr{cursor:pointer}.staff-table tbody tr:focus-visible{outline:3px solid #f5c452;outline-offset:-3px}.staff-table td>span{text-decoration:none}
 
-.dashboard-heading{margin-bottom:28px}.dashboard-heading h1{font-family:var(--font-heading),sans-serif;font-size:36px;margin:0 0 10px}.dashboard-heading p{color:#587277;margin:0}.dashboard-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.dashboard-metric{display:flex;flex-direction:column;align-items:flex-start;background:#fff;border:1px solid #dbe5e4;border-radius:14px;padding:28px;color:#163b40;text-decoration:none;gap:12px}.dashboard-metric:hover{border-color:#0b3a3f;background:#f0f6f4}.dashboard-metric>span{font-size:16px;font-weight:600}.dashboard-metric strong{font-size:44px;line-height:1.1;font-variant-numeric:tabular-nums}.dashboard-metric small{font-size:14px;color:#587277;line-height:1.5}.dashboard-billing b{font-size:26px;font-variant-numeric:tabular-nums}@media(max-width:600px){.dashboard-metrics{grid-template-columns:minmax(0,1fr)}.dashboard-metric{padding:22px}.dashboard-heading h1{font-size:30px}}
+.dashboard-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.dashboard-metric{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;min-height:250px;border:1px solid transparent;border-radius:14px;padding:30px;color:#163b40;text-decoration:none;gap:16px;transition:filter .15s}
+.dashboard-metric:nth-child(1){background:#e0eee7;border-color:#bdd5c9}
+.dashboard-metric:nth-child(2){background:#ece8f5;border-color:#d1c9e4}
+.dashboard-metric:nth-child(3){background:#f5c452;border-color:#ddb047}
+.dashboard-metric.dashboard-billing{background:#0b3a3f;color:#fff;border-color:#0b3a3f}
+.dashboard-metric:hover{filter:brightness(.97)}
+.dashboard-metric>span{font-size:18px;font-weight:700}
+.dashboard-metric strong{font-family:var(--font-heading),sans-serif;font-size:64px;font-weight:700;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.dashboard-metric small{font-size:14px;color:#36585d;line-height:1.5;max-width:38ch}
+.dashboard-billing small{color:#d1e5e3}
+.dashboard-billing b{font-family:var(--font-heading),sans-serif;font-size:clamp(28px,3.3vw,40px);line-height:1.15;color:#f5c452;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+@media(max-width:600px){.dashboard-metrics{grid-template-columns:minmax(0,1fr);gap:16px}.dashboard-metric{padding:24px;min-height:210px}.dashboard-metric strong{font-size:56px}}
