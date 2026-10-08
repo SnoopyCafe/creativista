@@ -203,3 +203,14 @@
 .student-detail-section .student-progress-editor{border:0;padding:0;margin:0 0 20px}
 .student-detail-section:last-child{margin-bottom:0}
 @media(max-width:600px){.student-detail-section{padding:16px}}
+
+/* Fit the student assignment grid within the section. */
+.student-detail-section .student-assignment-grid{min-width:0;width:100%;table-layout:fixed}
+.student-assignment-grid th,.student-assignment-grid td{padding:14px 10px;overflow-wrap:anywhere}
+.student-assignment-grid th:first-child{width:23%}
+.student-assignment-grid th:nth-child(2){width:auto}
+.student-assignment-grid th:nth-child(3){width:96px}
+.student-assignment-grid th:nth-child(4){width:130px}
+.student-assignment-grid th:last-child{width:78px}
+.admin-card .student-assignment-grid input[type=date]{width:100%;min-width:0;box-sizing:border-box;padding:8px 4px;font-size:13px}
+@media(max-width:600px){.student-assignment-grid th,.student-assignment-grid td{padding:10px 4px;font-size:12px}.student-assignment-grid th:first-child{width:20%}.student-assignment-grid th:nth-child(3){width:64px}.student-assignment-grid th:nth-child(4){width:100px}.student-assignment-grid th:last-child{width:60px}}
