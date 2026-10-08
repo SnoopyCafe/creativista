@@ -162,3 +162,13 @@
 .dashboard-leads .leads-scan-note{font-size:13px;color:#36585d}
 .dashboard-leads td{vertical-align:top;overflow-wrap:anywhere}
 .dashboard-leads td p{margin:8px 0 0;font-size:14px}
+
+.student-profile-heading{display:flex;align-items:flex-start;gap:40px;margin:24px 0}
+.student-profile-heading h2{margin:0 0 12px}
+.student-profile-heading p{margin:0}
+.student-profile-heading dl{display:flex;gap:40px;margin:0}
+.student-profile-heading dt{font-weight:700;margin-bottom:12px}
+.student-profile-heading dd{margin:0}
+.admin-card .student-detail-fields>.student-pod{display:grid;grid-template-columns:max-content minmax(0,1fr);align-items:center;gap:16px}
+.admin-card .student-pod input{margin-top:0}
+@media(max-width:600px){.student-profile-heading{flex-wrap:wrap;gap:24px}.student-profile-heading dl{gap:24px}}
