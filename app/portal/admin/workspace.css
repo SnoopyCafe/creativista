@@ -231,4 +231,5 @@
 .staff-grid-editor>div:first-child>.staff-actions{margin-bottom:12px}
 .admin-card button.danger-button{background:#8e3023}
 .account-row-actions{display:flex;align-items:center;gap:8px}.account-row-actions button{margin:0}
+.family-accounts-table tbody tr{cursor:pointer}
 @media(max-width:850px){.staff-grid-editor{grid-template-columns:minmax(0,1fr)}}
