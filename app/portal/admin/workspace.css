@@ -10,7 +10,7 @@
 
 .family-accounts-table{min-width:780px}.family-accounts-table td{vertical-align:top;overflow-wrap:anywhere}.family-accounts-table td:last-child{white-space:nowrap}
 
-.account-editor{border-top:1px solid #dbe5e4;margin-top:24px;padding-top:16px}.account-editor-heading{display:flex;align-items:center;justify-content:space-between}.family-accounts-table select{min-width:140px;margin:0}.family-accounts-table td:nth-child(3),.family-accounts-table td:nth-child(4){white-space:nowrap}
+.account-selected{background:#e8f1ef}.family-accounts-table .account-editor-row:hover{background:transparent}.family-accounts-table .account-editor-row>td{padding:0;border-bottom:1px solid #afc4c6}.account-editor{background:#f7faf9;padding:20px 24px 24px}.account-editor-heading{display:flex;align-items:center;justify-content:space-between;gap:16px}.admin-card .account-editor-heading h2{margin:0}.account-editor-contact-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}.family-accounts-table select{min-width:140px;margin:0}.family-accounts-table td:nth-child(3),.family-accounts-table td:nth-child(4){white-space:nowrap}
 
 .family-accounts-table tfoot{background:#edf3f2;font-weight:700}.family-accounts-table tfoot th,.family-accounts-table tfoot td{border-top:2px solid #afc4c6}
 
@@ -232,4 +232,4 @@
 .admin-card button.danger-button{background:#8e3023}
 .account-row-actions{display:flex;align-items:center;gap:8px}.account-row-actions button{margin:0}
 .family-accounts-table tbody tr{cursor:pointer}
-@media(max-width:850px){.staff-grid-editor{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:850px){.staff-grid-editor{grid-template-columns:minmax(0,1fr)}.account-editor-contact-row{grid-template-columns:minmax(0,1fr);gap:0}}
