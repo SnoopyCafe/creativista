@@ -11,13 +11,13 @@
 .interest-dialog h2{font-size:clamp(32px,4vw,48px);line-height:1.1;margin:0}
 .interest-close{flex:none;display:grid;place-items:center;width:44px;height:44px;border:0;border-radius:50%;background:#edf1e9;color:var(--ink);font:32px/1 var(--sans);cursor:pointer}
 .interest-close:hover{background:#dce6d8}
-#reading-interest-form{display:grid;gap:17px}
-#reading-interest-form label{display:block;color:#4b5c53;font-size:12px;font-weight:700;letter-spacing:.05em}
+#reading-interest-form,#program-interest-form{display:grid;gap:17px}
+#reading-interest-form label,#program-interest-form label{display:block;color:#4b5c53;font-size:12px;font-weight:700;letter-spacing:.05em}
 .interest-contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-#reading-interest-form input:not([type=checkbox]),#reading-interest-form select,#reading-interest-form textarea{display:block;width:100%;margin-top:7px;padding:14px 15px;border:1px solid #cbd4c9;border-radius:0;background:#fff;color:var(--ink);font:16px/1.5 var(--sans);letter-spacing:normal}
-#reading-interest-form input:not([type=checkbox]),#reading-interest-form select{min-height:54px}
-#reading-interest-form textarea{min-height:112px;resize:vertical}
-#reading-interest-form :is(input,select,textarea):focus-visible,.interest-close:focus-visible{outline:2px solid #005ecc;outline-offset:2px}
+#reading-interest-form input:not([type=checkbox]),#reading-interest-form select,#reading-interest-form textarea,#program-interest-form input,#program-interest-form select,#program-interest-form textarea{display:block;width:100%;margin-top:7px;padding:14px 15px;border:1px solid #cbd4c9;border-radius:0;background:#fff;color:var(--ink);font:16px/1.5 var(--sans);letter-spacing:normal}
+#reading-interest-form input:not([type=checkbox]),#reading-interest-form select,#program-interest-form input,#program-interest-form select{min-height:54px}
+#reading-interest-form textarea,#program-interest-form textarea{min-height:112px;resize:vertical}
+#reading-interest-form :is(input,select,textarea):focus-visible,#program-interest-form :is(input,select,textarea):focus-visible,.interest-close:focus-visible{outline:2px solid #005ecc;outline-offset:2px}
 #reading-interest-form .interest-check{display:flex;align-items:flex-start;gap:10px;font-size:14px;letter-spacing:normal;line-height:1.45}
 .interest-check input{width:20px;height:20px;flex:none;margin:0;accent-color:var(--forest)}
 .interest-submit{width:100%;min-height:60px;font-size:16px}
@@ -30,3 +30,4 @@
 
 #reading-details{scroll-margin-top:82px}
 @media(max-width:700px){.reading-groups .hero h1{font-size:35px}.reading-groups .hero .actions{display:grid;grid-template-columns:1fr;width:100%}.reading-groups .hero .actions .button{width:100%}}
+.callout button.button{background:transparent}
