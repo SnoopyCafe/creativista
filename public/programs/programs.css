@@ -29,3 +29,4 @@
 @media(max-width:700px){.interest-dialog-inner{padding:26px 22px 28px}.interest-contact{grid-template-columns:1fr;gap:17px}.interest-dialog h2{font-size:34px}.interest-close{width:40px;height:40px}}
 
 #reading-details{scroll-margin-top:82px}
+@media(max-width:700px){.reading-groups .hero h1{font-size:35px}.reading-groups .hero .actions{display:grid;grid-template-columns:1fr;width:100%}.reading-groups .hero .actions .button{width:100%}}
