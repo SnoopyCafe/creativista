@@ -35,3 +35,4 @@
 @media(max-width:760px){.reading-option:nth-child(2)>p,.reading-option:nth-child(3)>p{color:#31594d;font-weight:600}}
 .instructor-profile p:not(:first-of-type){font-weight:500;text-align:left}
 .reading-option>p{font-weight:700}
+@media(min-width:761px){.instructor-profile p:nth-of-type(5){width:calc(100% + 178px);white-space:nowrap}}
